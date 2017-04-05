@@ -64,7 +64,6 @@
         </ul>
     </div>
     <div id="content-wrapper">
-
         {!! $content ?? '' !!}
 
         @yield('content')

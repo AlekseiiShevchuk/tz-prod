@@ -9,6 +9,18 @@
         </div>
     @endif
 
+        @if(Auth::check() && Auth::user()->is_email_valid == 0)
+            <div class="alert membre-block-form">
+                Confirm your email please!
+            </div>
+        @endif
+
+        @if(Auth::check() && (Auth::user()->country_id == 1 || empty(Auth::user()->name)))
+            <div class="alert membre-block-form">
+                Please fill Country and Name fields before you can use all site features!
+            </div>
+        @endif
+
     <div name="membre" class="membre">
         <div class="membre-block-form">
             <p class="text-beginning" style="text-align: center!important;">{!!  trans('membre.text-beginning') !!}</p>

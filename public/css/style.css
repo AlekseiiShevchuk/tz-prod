@@ -1460,7 +1460,7 @@ select:focus, input:focus, button:focus, textarea:focus {
 .alert.membre-block-form {
     padding-bottom: 30px;
     text-align: center;
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .alert.membre-block-form.error {
