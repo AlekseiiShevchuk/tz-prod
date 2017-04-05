@@ -15,12 +15,12 @@
                 {{ csrf_field() }}
                 <input type="text" name="name" placeholder="{!!  trans('invite.name') !!}" value="{{ Auth::user()->name }}"/>
                 <input type="text" name="surname" placeholder="{!!  trans('invite.surname') !!}" value="{{ Auth::user()->surname }}"/>
-                <input type="text" name="email" placeholder="{!!  trans('invite.email') !!}" value="{{ Auth::user()->email }}"/>
+                <input type="email" name="email" placeholder="{!!  trans('invite.email') !!}" value="{{ Auth::user()->email }}"/>
                 <p class="invite-title">{!!  trans('invite.text-of-box') !!}</p>
                 <div class="invite-border">
                     <input type="text" name="name-friend" placeholder="{!!  trans('invite.name-friend') !!}" required/>
                     <input type="text" name="surname-friend" placeholder="{!!  trans('invite.surname-friend') !!}" required/>
-                    <input type="text" name="email-friend" placeholder="{!!  trans('invite.email-friend') !!}" required/>
+                    <input type="email" name="email-friend" placeholder="{!!  trans('invite.email-friend') !!}" required/>
                     <p>{!!  trans('invite.text-of-discr') !!}</p>
                     <textarea name="message"></textarea>
                 </div>
