@@ -1,0 +1,6 @@
+INSERT INTO turbulence.audio_categories (title, created_at, updated_at, deleted_at, `order`) VALUES ('Informations Générales', '2016-12-15 10:25:35', '2017-03-02 18:38:28', null, 1);
+INSERT INTO turbulence.audio_categories (title, created_at, updated_at, deleted_at, `order`) VALUES ('La série découverte', '2016-12-15 10:25:41', '2017-03-02 18:38:28', null, 2);
+INSERT INTO turbulence.audio_categories (title, created_at, updated_at, deleted_at, `order`) VALUES ('Les séries pratiques (Sessions de 10 minutes)', '2016-12-15 10:25:46', '2017-03-02 18:38:28', null, 3);
+INSERT INTO turbulence.audio_categories (title, created_at, updated_at, deleted_at, `order`) VALUES ('TestCategory', '2017-02-12 18:36:00', '2017-03-02 18:38:28', '2017-02-14 11:09:37', 6);
+INSERT INTO turbulence.audio_categories (title, created_at, updated_at, deleted_at, `order`) VALUES ('PavelSounds', '2017-02-14 06:49:14', '2017-03-02 18:38:28', '2017-02-14 11:09:35', 5);
+INSERT INTO turbulence.audio_categories (title, created_at, updated_at, deleted_at, `order`) VALUES ('Les séries pratiques (Sessions de 20 minutes)', '2017-02-14 11:10:15', '2017-03-02 18:38:28', null, 4);

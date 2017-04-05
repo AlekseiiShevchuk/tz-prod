@@ -1,0 +1,18 @@
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série la respiration - 10 Minutes', 3, '2016-12-16 06:48:53', '2017-02-27 12:10:14', null, 1);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série les émotions - 10 Minutes', 3, '2016-12-16 06:49:13', '2017-02-27 12:10:39', null, 6);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série les sensations - 10 Minutes', 3, '2016-12-16 06:49:41', '2017-02-27 12:10:39', null, 2);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Présentation', 1, '2017-02-09 09:48:42', '2017-03-02 18:39:41', null, 1);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('La posture', 1, '2017-02-09 13:53:04', '2017-03-02 18:39:41', null, 3);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série les objets - 10 Minutes', 3, '2017-02-09 13:55:45', '2017-02-27 12:10:39', null, 4);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série les pensées - 10 Minutes', 3, '2017-02-09 13:56:02', '2017-02-27 12:10:39', null, 5);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série les sons - 10 Minutes', 3, '2017-02-09 13:56:24', '2017-02-27 12:10:39', null, 3);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série la respiration - 20 Minutes', 6, '2017-02-09 14:09:54', '2017-02-27 12:11:17', null, 1);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série les émotions - 20 Minutes', 6, '2017-02-09 14:10:47', '2017-02-27 12:11:20', null, 6);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série les sensations - 20 Minutes', 6, '2017-02-09 14:12:07', '2017-02-27 12:11:20', null, 2);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série les objets - 20 Minutes', 6, '2017-02-09 14:12:40', '2017-02-27 12:11:26', null, 4);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série les pensées - 20 Minutes', 6, '2017-02-09 14:13:57', '2017-02-27 12:11:20', null, 5);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série les sons - 20 Minutes', 6, '2017-02-09 14:14:50', '2017-02-27 12:11:26', null, 3);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série découverte - 10 Minutes', 2, '2017-02-09 14:15:58', '2017-02-14 07:34:26', null, 0);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('Série découverte - 20 Minutes', 2, '2017-02-09 14:16:11', '2017-02-14 07:34:41', null, 0);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('ddwqdqw', 1, '2017-02-09 16:05:58', '2017-03-02 18:39:41', '2017-02-09 16:06:13', 2);
+INSERT INTO turbulence.audio_groups (title, audio_categories_id, created_at, updated_at, deleted_at, `order`) VALUES ('TestGroup', 4, '2017-02-12 18:36:28', '2017-02-12 18:36:28', null, 0);

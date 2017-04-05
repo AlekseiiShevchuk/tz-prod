@@ -1,0 +1,30 @@
+<?php
+return [
+    'title' => 'Membre',
+    'name' => 'Prénom',
+    'surname' => 'Nom',
+    'nickname' => 'Pseudo',
+    'rep-new-pas' => 'Confirmer mot de passe',
+    'data-bth' => 'Date de naissance:',
+    'gender' => 'Sexe',
+    'man' => 'Homme',
+    'women' => 'Femme',
+    'country' => 'Pays',
+    'city' => 'Ville',
+    'z-code' => 'Code postal',
+    'address' => 'Adresse',
+    'address2' => 'Complément d\'adresse',
+    'phone' => 'Code Pays',
+    'phone2' => 'Numéro de mobile (sans le 0)',
+    'upload' => 'Télécharger',
+    'exit' => 'Retour',
+    'photo' => 'Photo',
+    'save' => 'Sauvegarder',
+    'text-beginning' => 'Aucune des informations de votre profil n\'est publique.<br />Seul votre Pseudo et photo seront visibles dans le Forum.',
+    'text-under-button' => 'Si vous éprouvez des difficultés, n\'hésitez pas à nous contacter.',
+    'password' => 'Si vous désirez un nouveau mot de passe, tapez le dans la première case et confirmez le dans la seconde.
+Ne tapez rien pour conserver votre mot de passe actuel.',
+    'nickname_is_exists' => 'Ce pseudo est déjà utilisé. Choisissez-en un autre ou contactez-nous.',
+    'phone_is_exists' => 'Ce numéro de téléphone est déjà utilisé. Choisissez-en un autre ou contactez-nous.',
+    'subscribe_news' => 'Recevoir des informations de Turbulence Zéro'
+];

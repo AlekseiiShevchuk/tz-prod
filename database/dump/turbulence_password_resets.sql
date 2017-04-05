@@ -1,0 +1,5 @@
+INSERT INTO turbulence.password_resets (email, token, created_at) VALUES ('mendel+client@mediapark.by', '78506c989a68c0402c9e2ab681d4b36950aa00329e14e486336d27d8ddbecc44', '2016-12-20 08:04:34');
+INSERT INTO turbulence.password_resets (email, token, created_at) VALUES ('mendel@mediapark.lt', '150b21a98daa85644a3e1438c36944cfb3428f4a9d8588e146f2be17163ae784', '2017-03-02 08:04:16');
+INSERT INTO turbulence.password_resets (email, token, created_at) VALUES ('sergey.komyak@mediapark.com', '99a0a9f040c3a9b5aa98a422a015b916ad1b7e2f3dc67cc72310d3a06511f2aa', '2017-03-02 15:10:23');
+INSERT INTO turbulence.password_resets (email, token, created_at) VALUES ('sergey.komyak@gmail.com', '1bea15d0dada325858c731e27e1ebd7e4ef0986fdebd0b7dd5f51b047a7fb349', '2017-03-02 15:10:45');
+INSERT INTO turbulence.password_resets (email, token, created_at) VALUES ('stephane@vanackere.com', '54330f48fea9f1d8fc34aef3d1d9b542cce8ae759b418d6d611fbcf565cda337', '2017-03-03 07:59:30');

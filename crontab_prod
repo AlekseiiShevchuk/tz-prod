@@ -1,0 +1,2 @@
+* * * * * /usr/bin/php /var/www/turbulence-backend/artisan schedule:run >> /dev/null
+0 1 * * * /usr/bin/php /var/www/turbulence-backend/artisan users:clear >> /dev/null
