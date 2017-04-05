@@ -118,7 +118,7 @@ class FacebookController extends Controller
 
                     $response2 = $fb->get('/me/picture?width=200');
 
-                    var_dump($response2);
+                    //var_dump($response2);
 
                     if(isset($response2->getHeaders()['Location'])){
                         $image = $response2->getHeaders()['Location'];
