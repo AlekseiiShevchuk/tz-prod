@@ -1,3 +1,6 @@
+<script>
+    history.pushState(null, null, location.href);
+</script>
 <div class="abonne-title">
     {!!  trans('subscription.title') !!}
 </div>
