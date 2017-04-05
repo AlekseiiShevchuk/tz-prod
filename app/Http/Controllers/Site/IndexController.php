@@ -108,7 +108,7 @@ class IndexController extends Controller {
         // $to = 'eugene.kharetsky@mediapark.com';
         //        $to = 'andrewkarpich@gmail.com';
         //        $to = 'andrewkarpich@yandex.ru';
-        // shevchuka@gmail.com
+                $to = 'shevchuka@gmail.com';
 
         if(Auth::check()){
             $this->validate($request, [
