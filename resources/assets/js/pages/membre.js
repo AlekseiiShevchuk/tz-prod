@@ -43,7 +43,7 @@ module.exports = {
 
         function check_date(){
 
-            let newMonth = $month[0].selectedIndex + 1;
+            let newMonth = $month[0].selectedIndex + 0;
             let newYear = $year[0].selectedIndex + 1947;
 
             $date.attr('value', $date[0].selectedIndex + 1);

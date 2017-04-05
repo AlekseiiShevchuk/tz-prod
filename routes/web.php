@@ -51,7 +51,7 @@ Route::group([ 'middleware' => 'trailing_slashes' ], function(){
             Route::post('membre', 'IndexController@saveMembre');
 
             Route::get('abonne', 'SubscriptionController@index');
-            Route::get('abonne/details/{id}', 'SubscriptionController@details');
+            Route::get('abonne/details/{id}', 'SubscriptionController@details')->name('productDetails');
             Route::get('abonne/invite/details/{id}', 'SubscriptionController@inviteDetails');
             Route::get('abonne/invite', 'SubscriptionController@invite');
             Route::post('abonne/invite/save', 'SubscriptionController@saveInviter');

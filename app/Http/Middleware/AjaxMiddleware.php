@@ -11,12 +11,12 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\ResponseFactory;
-use League\Flysystem\Exception;
-use ReflectionFunction;
 
-class AjaxMiddleware {
+class AjaxMiddleware
+{
 
-    public function handle($request, Closure $next, $guard = null){
+    public function handle($request, Closure $next, $guard = null)
+    {
 
         /**
          * @var Request $request
@@ -31,9 +31,13 @@ class AjaxMiddleware {
         $blueStyle = false;
         $title = 'Turbulence Zéro';
 
-        if(isset($responseFactory->otherViewData)){
-            if(isset($responseFactory->otherViewData['blue_style']) && $responseFactory->otherViewData['blue_style']) $blueStyle = true;
-            if(isset($responseFactory->otherViewData['title'])) $title = $responseFactory->otherViewData['title'];
+        if (isset($responseFactory->otherViewData)) {
+            if (isset($responseFactory->otherViewData['blue_style']) && $responseFactory->otherViewData['blue_style']) {
+                $blueStyle = true;
+            }
+            if (isset($responseFactory->otherViewData['title'])) {
+                $title = $responseFactory->otherViewData['title'];
+            }
         }
 
         $responseData = [
@@ -43,11 +47,12 @@ class AjaxMiddleware {
             'location' => $response->headers->get('location')
         ];
 
-        if( !$request->ajax() ){
+
+        if (!$request->ajax()) {
 
             $response->setContent(view('site.layouts.main', $responseData));
 
-        }else{
+        } else {
 
             $response = $responseFactory->json($responseData);
 

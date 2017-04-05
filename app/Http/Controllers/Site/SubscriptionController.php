@@ -44,20 +44,6 @@ class SubscriptionController extends Controller {
     {
         $user = Auth::user();
 
-        if ($user->is_email_valid == 0) {
-            Session::flash('flash_message', 'Confirm your email');
-            Session::flash('flash_message_type', 'error');
-
-            return redirect('/abonne');
-        }
-
-        if($user->country()->get()[0]->iso == ''){
-            Session::flash('flash_message', 'Renseignez votre pays');
-            Session::flash('flash_message_type', 'error');
-
-            return redirect('membre?redirect_to=/abonne/details/' . $id);
-        }
-
         try {
             $currentPlan = $cardinity->getPlan((int)$id);
 
