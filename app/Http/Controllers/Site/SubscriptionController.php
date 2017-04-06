@@ -17,25 +17,27 @@ use Carbon\Carbon;
 use Cardinity\Method\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Inacho\CreditCard;
 use Session;
 
-class SubscriptionController extends Controller {
+class SubscriptionController extends Controller
+{
 
 
-    public function index(Cardinity $cardinity, $invite = false){
+    public function index(Cardinity $cardinity, $invite = false)
+    {
 
         $detailsUrl = $invite ? '/abonne/invite/details/' : '/abonne/details/';
 
         return view('site.subscription.abonne', [
-            'plans'       => $cardinity->getAllPlans(),
+            'plans' => $cardinity->getAllPlans(),
             'details_url' => $detailsUrl,
         ]);
     }
 
-    public function inviteDetails(Cardinity $cardinity, $id){
+    public function inviteDetails(Cardinity $cardinity, $id)
+    {
 
         return $this->details($cardinity, $id, true);
     }
@@ -48,37 +50,47 @@ class SubscriptionController extends Controller {
             $currentPlan = $cardinity->getPlan((int)$id);
 
             return view('site.subscription.details', [
-                'years'  => $this->getAvailableYears(),
+                'years' => $this->getAvailableYears(),
                 'months' => $this->getAvailableMonths(),
-                'id'     => $id,
+                'id' => $id,
                 'invite' => $invite,
             ]);
 
-        } catch(\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->back();
         }
     }
 
-    public function invite(){
+    public function invite()
+    {
         return view('site.subscription.invite', []);
     }
 
-    public function saveInviter(Request $request, Cardinity $cardinity){
+    public function saveInviter(Request $request, Cardinity $cardinity)
+    {
 
         Session::set('inviter_data', $request->all());
 
         return $this->index($cardinity, true);
     }
 
-    public function payment(){
+    public function inviterForGetRequest()
+    {
+        return redirect('abonne/invite');
+    }
+
+    public function payment()
+    {
         return view('site.subscription.payment', []);
     }
 
-    public function renewal(){
+    public function renewal()
+    {
         return view('site.subscription.renewal', []);
     }
 
-    public function activateAuto(){
+    public function activateAuto()
+    {
         $user = Auth::user();
 
         $user->is_subscription_renewable = true;
@@ -88,7 +100,8 @@ class SubscriptionController extends Controller {
         return redirect('/abonne/subscription');
     }
 
-    public function deleteAuto(){
+    public function deleteAuto()
+    {
 
         $user = Auth::user();
 
@@ -99,46 +112,50 @@ class SubscriptionController extends Controller {
         return redirect('/abonne/subscription');
     }
 
-    public function subscription(){
+    public function subscription()
+    {
 
         $user = Auth::user();
 
-        if(!$user->isSubscriber()) return redirect('/abonne');
+        if (!$user->isSubscriber()) {
+            return redirect('/abonne');
+        }
 
         return view('site.subscription.subscription', [
             'payments' => $user->payments()->get(),
-            'gifts'    => $user->gifts()->get(),
+            'gifts' => $user->gifts()->get(),
         ]);
     }
 
-    public function save(Request $request, Cardinity $cardinity, $id){
+    public function save(Request $request, Cardinity $cardinity, $id)
+    {
 
         $this->validate($request, [
-            'holder'    => 'required|max:32',
-            'pan'       => 'required',
-            'cvc'       => 'required',
+            'holder' => 'required|max:32',
+            'pan' => 'required',
+            'cvc' => 'required',
             'exp_month' => 'required',
-            'exp_year'  => 'required',
+            'exp_year' => 'required',
         ]);
 
 
         $card = CreditCard::validCreditCard($request->offsetGet('pan'));
 
-        if(!$card['valid']){
+        if (!$card['valid']) {
             return redirect()->back()->withErrors([
                 'pan' => 'Le numéro de carte n\'est pas valide',
             ]);
         }
 
         $validCvc = CreditCard::validCvc($request->offsetGet('cvc'), $card['type']);
-        if(!$validCvc){
+        if (!$validCvc) {
             return redirect()->back()->withErrors([
                 'cvc' => 'CVC est pas valide',
             ]);
         }
 
         $validDate = CreditCard::validDate((int)$request->offsetGet('exp_year'), (int)$request->offsetGet('exp_month'));
-        if(!$validDate){
+        if (!$validDate) {
             return redirect()->back()->withErrors([
                 'exp_month' => 'La Date n\'est pas valide',
             ]);
@@ -162,18 +179,18 @@ class SubscriptionController extends Controller {
 
             $payment = $cardinity->createCardPayment($card, $currentPlan);
 
-            if($payment->isPending()){
+            if ($payment->isPending()) {
                 Session::set('cardinity_payment', $payment->serialize());
                 Session::set('cardinity_plan', $currentPlan->id);
 
                 return view('site.subscription.secure', [
-                    'auth'        => $payment->getAuthorizationInformation(),
+                    'auth' => $payment->getAuthorizationInformation(),
                     'callbackUrl' => url('abonne/processAuthorization?_token=' . csrf_token() . '&invite=' . $invite),
-                    'identifier'  => $payment->getOrderId(),
+                    'identifier' => $payment->getOrderId(),
                 ]);
             }
 
-            if($payment->isApproved()){
+            if ($payment->isApproved()) {
                 Session::flash('flash_message', 'Succès');
 
                 self::successPayment($currentPlan, $payment, Auth::user(), $invite);
@@ -181,22 +198,22 @@ class SubscriptionController extends Controller {
                 return redirect('abonne/subscription');
             }
 
-        } catch(\Cardinity\Exception\Declined $exception){
+        } catch (\Cardinity\Exception\Declined $exception) {
             Session::flash('flash_message', $exception->getErrors()[0]);
             Session::flash('flash_message_type', 'error');
 
             return redirect()->back();
-        } catch(\Cardinity\Exception\InvalidAttributeValue $exception){
+        } catch (\Cardinity\Exception\InvalidAttributeValue $exception) {
             Session::flash('flash_message', $exception->getMessage());
             Session::flash('flash_message_type', 'error');
 
             return redirect()->back();
-        } catch(\Cardinity\Exception\ValidationFailed $exception){
+        } catch (\Cardinity\Exception\ValidationFailed $exception) {
             Session::flash('flash_message', $exception->getErrors()[0]['message']);
             Session::flash('flash_message_type', 'error');
 
             return redirect()->back();
-        } catch(\ErrorException $exception){
+        } catch (\ErrorException $exception) {
             Session::flash('flash_message', 'Plan type d\'erreur');
             Session::flash('flash_message_type', 'error');
 
@@ -204,7 +221,8 @@ class SubscriptionController extends Controller {
         }
     }
 
-    public function processAuthorization(Request $request, Cardinity $cardinity){
+    public function processAuthorization(Request $request, Cardinity $cardinity)
+    {
 
         $message = null;
         $identifier = $request->offsetGet('MD');
@@ -217,7 +235,7 @@ class SubscriptionController extends Controller {
         $payment = new Payment\Payment();
 
         $payment->unserialize(Session::get('cardinity_payment'));
-        if($payment->getOrderId() != $identifier || $pares != $payment->getDescription()){
+        if ($payment->getOrderId() != $identifier || $pares != $payment->getDescription()) {
             Session::flash('flash_message', 'Invalide de rappel de données');
             Session::flash('flash_message_type', 'error');
 
@@ -225,7 +243,7 @@ class SubscriptionController extends Controller {
         }
 
         try {
-            if($payment->isPending()){
+            if ($payment->isPending()) {
                 $method = new Payment\Finalize(
                     $payment->getId(),
                     $pares
@@ -234,14 +252,14 @@ class SubscriptionController extends Controller {
                 $payment = $cardinity->call($method);
             }
 
-            if($payment->isApproved()){
+            if ($payment->isApproved()) {
                 Session::flash('flash_message', 'Success');
 
                 self::successPayment($currentPlan, $payment, Auth::user(), $invite);
 
                 return redirect('abonne/subscription');
             }
-        } catch(\Cardinity\Exception\Runtime $e){
+        } catch (\Cardinity\Exception\Runtime $e) {
             Session::flash('flash_message', '3D secure error');
             Session::flash('flash_message_type', 'error');
 
@@ -253,12 +271,13 @@ class SubscriptionController extends Controller {
         return redirect('abonne/details/' . $currentPlan->id);
     }
 
-    public static function successPayment(Plan $plan, Payment\Payment $cardinityPayment, $user, $invite = false){
+    public static function successPayment(Plan $plan, Payment\Payment $cardinityPayment, $user, $invite = false)
+    {
         $startDate = Carbon::create();
 
         $lastPayment = $user->getLastPayment();
 
-        if($lastPayment){
+        if ($lastPayment) {
             $startDate = $lastPayment->end_access_date;
         } else {
             $user->start_subscribe_date = $startDate->format('Y-m-d');
@@ -267,24 +286,26 @@ class SubscriptionController extends Controller {
         $endDate->addMonths($plan->countMonth);
 
         // If invite - send email message and check email
-        if($invite){
+        if ($invite) {
 
             $isRenewable = false;
 
             $inviterData = Session::get('inviter_data');
 
-            if(!isset($inviterData['email-friend'])) return false;
+            if (!isset($inviterData['email-friend'])) {
+                return false;
+            }
 
             $email = trim($inviterData['email-friend']);
 
             $userInvited = User::where('email', $email)->first();
 
-            if($userInvited){
+            if ($userInvited) {
 
                 $user_id = $userInvited->id;
                 $lastPayment = $userInvited->getLastPayment();
 
-                if($lastPayment){
+                if ($lastPayment) {
                     $startDate = $lastPayment->end_access_date;
                 } else {
                     $startDate = Carbon::create();
@@ -293,7 +314,7 @@ class SubscriptionController extends Controller {
                 $endDate = clone $startDate;
                 $endDate->addMonths($plan->countMonth);
 
-                if($userInvited->id == $user->id){
+                if ($userInvited->id == $user->id) {
                     $isRenewable = true;
                 }
 
@@ -303,9 +324,9 @@ class SubscriptionController extends Controller {
                 Mail::send('site.emails.invite', [
                     'data' => $inviterData,
                     'plan' => $plan,
-                    'url'  => \URL::to('email/verif/' . $user_id . '/' . $userInvited->email_token),
+                    'url' => \URL::to('email/verif/' . $user_id . '/' . $userInvited->email_token),
                     'end_access_date' => $endDate->format('d.m.Y'),
-                ], function($message) use ($email){
+                ], function ($message) use ($email) {
                     $message->to($email);
                     $message->subject(trans('subscription.email_subject'));
                 });
@@ -320,25 +341,25 @@ class SubscriptionController extends Controller {
                 $endDate->addMonths($plan->countMonth);
 
                 $newUser = User::create([
-                    'name'                 => '',
-                    'email'                => $email,
-                    'password'             => $password,
-                    'partner_aid'          => 0,
-                    'email_token'          => $email_token,
-                    'is_email_valid'       => 0,
+                    'name' => '',
+                    'email' => $email,
+                    'password' => $password,
+                    'partner_aid' => 0,
+                    'email_token' => $email_token,
+                    'is_email_valid' => 0,
                     'start_subscribe_date' => $startDate->format('Y-m-d'),
                 ]);
 
-                if($newUser){
+                if ($newUser) {
                     $user_id = $newUser->id;
 
                     Mail::send('site.emails.invite_new', [
-                        'data'     => $inviterData,
-                        'plan'     => $plan,
-                        'url'      => \URL::to('email/verif/' . $user_id . '/' . $email_token),
+                        'data' => $inviterData,
+                        'plan' => $plan,
+                        'url' => \URL::to('email/verif/' . $user_id . '/' . $email_token),
                         'password' => $password,
                         'end_access_date' => $endDate->format('d.m.Y'),
-                    ], function($message) use ($email){
+                    ], function ($message) use ($email) {
                         $message->to($email);
                         $message->subject(trans('subscription.email_subject'));
                     });
@@ -348,11 +369,11 @@ class SubscriptionController extends Controller {
             Mail::send('site.emails.invite_payer', [
                 'data' => $inviterData,
                 'plan' => $plan,
-                'url'  => env('APP_URL'),
+                'url' => env('APP_URL'),
                 'end_access_date' => $endDate->format('d.m.Y'),
-            ], function($message) use ($user, $inviterData){
+            ], function ($message) use ($user, $inviterData) {
                 $message->to($user->email);
-                $message->subject(trans('subscription.email_subject_payer', ['name'=> $inviterData['name-friend']]));
+                $message->subject(trans('subscription.email_subject_payer', ['name' => $inviterData['name-friend']]));
             });
 
         } else {
@@ -360,11 +381,11 @@ class SubscriptionController extends Controller {
             $isRenewable = true;
 
             \Mail::send('site.emails.buy', [
-                'user'            => $user,
-                'plan'            => $plan,
-                'url'             => \URL::to('/'),
+                'user' => $user,
+                'plan' => $plan,
+                'url' => \URL::to('/'),
                 'end_access_date' => $endDate->format('d.m.Y'),
-            ], function($message) use ($user){
+            ], function ($message) use ($user) {
                 $message->to($user->email);
                 $message->subject(trans('subscription.buy_subject'));
             });
@@ -381,21 +402,21 @@ class SubscriptionController extends Controller {
         $payment->end_access_date = $endDate->format('Y-m-d');
         $payment->is_renewable = $isRenewable;
 
-        if($user->isPartner()){
+        if ($user->isPartner()) {
             $partner = $user;
         } else {
             $partner = $user->partner();
         }
 
-        if($partner && $partner->percent != 0.0){
+        if ($partner && $partner->percent != 0.0) {
             $payment->partner_percent = $partner->percent;
             $payment->partner_sum = $payment->price / (100 / $partner->percent);
         }
 
-        if($payment->save()){
+        if ($payment->save()) {
             $user->save();
 
-            if($invite && $email && $user_id == 0){
+            if ($invite && $email && $user_id == 0) {
                 $invitedUser = new InvitedUsers;
                 $invitedUser->email = $email;
                 $invitedUser->payment_id = $payment->id;
@@ -409,19 +430,21 @@ class SubscriptionController extends Controller {
         return false;
     }
 
-    private function getAvailableYears(){
+    private function getAvailableYears()
+    {
         $return = [];
-        for($i = date('Y'); $i <= date('Y') + 7; $i++){
-            $return[ $i ] = $i;
+        for ($i = date('Y'); $i <= date('Y') + 7; $i++) {
+            $return[$i] = $i;
         }
 
         return $return;
     }
 
-    private function getAvailableMonths(){
+    private function getAvailableMonths()
+    {
         $return = [];
-        for($i = 1; $i <= 12; $i++){
-            $return[ $i ] = $i;
+        for ($i = 1; $i <= 12; $i++) {
+            $return[$i] = $i;
         }
 
         return $return;

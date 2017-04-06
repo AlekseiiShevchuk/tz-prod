@@ -44,6 +44,7 @@ Route::group([ 'middleware' => 'trailing_slashes' ], function(){
             Route::get('abonne/invite/details/{id}', 'SubscriptionController@inviteDetails');
             Route::get('abonne/invite', 'SubscriptionController@invite');
             Route::post('abonne/invite/save', 'SubscriptionController@saveInviter');
+            Route::get('abonne/invite/save', 'SubscriptionController@inviterForGetRequest');
             Route::get('abonne/payment', 'SubscriptionController@payment');
             Route::get('abonne/renewal', 'SubscriptionController@renewal');
             Route::get('abonne/renewal/delete', 'SubscriptionController@deleteAuto');

@@ -1,6 +1,6 @@
 <script>
-    history.pushState(null, null, location.href);
-    history.forward(1);
+    window.history.pushState(null, null, location.href);
+    window.history.forward();
 </script>
 <div class="abonne-title">
     {!!  trans('abonne.title') !!}
