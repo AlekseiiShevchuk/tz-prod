@@ -20,7 +20,7 @@
                 <div class="invite-border">
                     <input type="text" name="name-friend" placeholder="{!!  trans('invite.name-friend') !!}" required/>
                     <input type="text" name="surname-friend" placeholder="{!!  trans('invite.surname-friend') !!}" required/>
-                    <input type="email" name="email-friend" placeholder="{!!  trans('invite.email-friend') !!}" required/>
+                    <input type="email" name="email-friend" placeholder="{!!  trans('invite.email-friend') !!}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required/>
                     <p>{!!  trans('invite.text-of-discr') !!}</p>
                     <textarea name="message"></textarea>
                 </div>
