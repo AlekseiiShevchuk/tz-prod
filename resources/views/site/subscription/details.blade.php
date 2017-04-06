@@ -1,7 +1,7 @@
-<script>
-    window.history.pushState(null, null, location.href);
-    window.history.forward();
-</script>
+{{--<script>--}}
+    {{--window.history.pushState(null, null, location.href);--}}
+    {{--window.history.forward();--}}
+{{--</script>--}}
 <div class="abonne-title">
     {!!  trans('abonne.title') !!}
 </div>
