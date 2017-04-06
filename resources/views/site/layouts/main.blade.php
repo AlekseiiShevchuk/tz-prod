@@ -32,23 +32,30 @@
     <div id="header" class="header" style="padding-left: 22px;">
         <ul class="menu">
             <li>
-                <a ajax="true" href="/">{!!  trans('main.menu.zero') !!}</a>
+                {{--<a ajax="true" href="/">{!!  trans('main.menu.zero') !!}</a>--}}
+                <a href="/">{!!  trans('main.menu.zero') !!}</a>
             </li>
             <li>
-                <a ajax="true" href="/meditation">{!!  trans('main.menu.meditation') !!}</a>
+                {{--<a ajax="true" href="/meditation">{!!  trans('main.menu.meditation') !!}</a>--}}
+                <a href="/meditation">{!!  trans('main.menu.meditation') !!}</a>
             </li>
             <li>
-                <a ajax="true" href="/library" >{!!  trans('main.menu.library') !!}</a>
+                {{--<a ajax="true" href="/library" >{!!  trans('main.menu.library') !!}</a>--}}
+                <a href="/library" >{!!  trans('main.menu.library') !!}</a>
             </li>
-            <li><a ajax="true" id="main_logo"  href="/" class="logo"></a></li>
+            {{--<li><a ajax="true" id="main_logo"  href="/" class="logo"></a></li>--}}
+            <li><a id="main_logo"  href="/" class="logo"></a></li>
             <li>
-                <a ajax="true" href="/membre">{!!  trans('main.menu.profile') !!}</a>
+                {{--<a ajax="true" href="/membre">{!!  trans('main.menu.profile') !!}</a>--}}
+                <a href="/membre">{!!  trans('main.menu.profile') !!}</a>
             </li>
             <li>
-                <a ajax="true" href="@if(Auth::check() && !Auth::user()->isAdmin() && Auth::user()->isSubscriber()) /abonne/subscription @else /abonne @endif">{!!  trans('main.menu.subscription') !!}</a>
+                {{--<a ajax="true" href="@if(Auth::check() && !Auth::user()->isAdmin() && Auth::user()->isSubscriber()) /abonne/subscription @else /abonne @endif">{!!  trans('main.menu.subscription') !!}</a>--}}
+                <a href="@if(Auth::check() && !Auth::user()->isAdmin() && Auth::user()->isSubscriber()) /abonne/subscription @else /abonne @endif">{!!  trans('main.menu.subscription') !!}</a>
             </li>
             <li>
-                <a ajax="true" href="/contacts">{!!  trans('main.menu.contacts') !!}</a>
+                {{--<a ajax="true" href="/contacts">{!!  trans('main.menu.contacts') !!}</a>--}}
+                <a href="/contacts">{!!  trans('main.menu.contacts') !!}</a>
             </li>
             <li>
                 <div class="footer_soc-net">
@@ -102,10 +109,12 @@
                         <a href="#" popup="tanks">{!!  trans('main.footer.tanks') !!}</a>
                     </li>
                     <li>
-                        <a ajax="true" href="/faq">{!!  trans('main.footer.faq') !!}</a>
+                        {{--<a ajax="true" href="/faq">{!!  trans('main.footer.faq') !!}</a>--}}
+                        <a href="/faq">{!!  trans('main.footer.faq') !!}</a>
                     </li>
                     <li>
-                        <a ajax="true" href="/presse">{!!  trans('main.footer.presse') !!}</a>
+                        {{--<a ajax="true" href="/presse">{!!  trans('main.footer.presse') !!}</a>--}}
+                        <a href="/presse">{!!  trans('main.footer.presse') !!}</a>
                     </li>
                     <li class="hidden">
                         <div class="footer_soc-net">

@@ -33,7 +33,8 @@
             </ul>
         </div>
         @if(!Auth::check())
-            <a ajax="true" href="login" class="home-buttom">{!!  trans('index.enter') !!}</a>
+            {{--<a ajax="true" href="login" class="home-buttom">{!!  trans('index.enter') !!}</a>--}}
+            <a href="login" class="home-buttom">{!!  trans('index.enter') !!}</a>
         @endif
 
         {{--<div class="line"></div>

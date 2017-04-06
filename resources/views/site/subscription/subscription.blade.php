@@ -7,6 +7,10 @@
 <div class="content-white">
     <div class="faq">
 
+            <div class="block-button">
+                {{--<a ajax="true" href="{{ url("/abonne/invite")  }}" class="subscr-button">{{ trans('abonne.abonne_invite') }}</a>--}}
+                <a href="{{ url("/abonne/invite")  }}" class="subscr-button">{{ trans('abonne.abonne_invite') }}</a>
+            </div><br>
         <div class="block-subscr">
             @if(count($payments) > 0)
                 @foreach($payments as $payment)
@@ -21,7 +25,8 @@
                 @endforeach
             @endif
             <div class="block-button">
-                <a ajax="true" href="{{ url('/abonne') }}" class="subscr-button">{!!  trans('subscription.button-1') !!}</a>
+                <a href="{{ url('/abonne') }}" class="subscr-button">{!!  trans('subscription.button-1') !!}</a>
+                {{--<a ajax="true" href="{{ url('/abonne') }}" class="subscr-button">{!!  trans('subscription.button-1') !!}</a>--}}
                 {{--<a href="#" class="subscr-button">{!!  trans('subscription.button-2') !!}</a>--}}
             </div>
 
@@ -44,9 +49,6 @@
                     <p>{!!  trans('subscription.start-date', ['date' => $gift->start_access_date->format('M d, Y')]) !!}</p>
                     <p class="last">{!!  trans('subscription.end-date', ['date' => $gift->end_access_date->format('M d, Y')]) !!}</p>
                 @endforeach
-            <div class="block-button">
-                <a ajax="true" href="{{ url("/abonne/invite")  }}" class="subscr-button">{{ trans('abonne.abonne_invite') }}</a>
-            </div>
         </div>
         @endif
     </div>
