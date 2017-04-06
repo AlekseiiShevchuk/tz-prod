@@ -39,7 +39,7 @@
             <p class="tzinfo-block-text_title">{!! trans('abonne.gifts') !!}</p>
                 @foreach($gifts as $gift)
                     <p class="title">{!!  trans('subscription.abonne') !!}</p>
-                    <p>{!!  trans('abonne.user') !!} {{ $gift->payer()->name }} {{ $gift->payer()->surname }}</p>
+                    <p>{!!  trans('abonne.user') !!} {{ $gift->user()->name or '' }} {{ $gift->user()->surname or '' }} {{ $gift->user()->email }}</p>
                     <p>{!!  trans('subscription.type', [ 'months' => $gift->plan()->countMonth ]) !!}</p>
                     <p>{!!  trans('subscription.start-date', ['date' => $gift->start_access_date->format('M d, Y')]) !!}</p>
                     <p class="last">{!!  trans('subscription.end-date', ['date' => $gift->end_access_date->format('M d, Y')]) !!}</p>
