@@ -30,7 +30,9 @@
 
                 {{ csrf_field() }}
                 <p>{!!  trans('membre.name') !!}</p>
-                <input type="text" name="name" placeholder="{!!  trans('membre.name') !!}" value="{{$item->name}}"/>
+                <div class="req_field country">
+                </div>
+                    <input type="text" name="name" placeholder="{!!  trans('membre.name') !!}" value="{{$item->name}}"/>
                 <p>{!!  trans('membre.surname') !!}</p>
                 <input type="text" name="surname" placeholder="{!!  trans('membre.surname') !!}" value="{{$item->surname}}"/>
                 <p>{!!  trans('membre.nickname') !!}</p>
