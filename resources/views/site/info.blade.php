@@ -11,8 +11,10 @@
             <div class="tzinfo-block-text">
                 <div class="block-info-text">
                     <p class="tzinfo-block-text_title">{!!  trans('info.title-1') !!}</p>
-                    <a  ajax="true" href="library?category=2" class="tzinfo-block-text_link">Essai gratuit</a>
-                    <a  ajax="true" href="{{ url("/abonne/invite")  }}" class="tzinfo-block-text_link">{{ trans('abonne.abonne_invite') }}</a>
+                    {{--<a  ajax="true" href="library?category=2" class="tzinfo-block-text_link">Essai gratuit</a>--}}
+                    {{--<a  ajax="true" href="{{ url("/abonne/invite")  }}" class="tzinfo-block-text_link">{{ trans('abonne.abonne_invite') }}</a>--}}
+                    <a href="library?category=2" class="tzinfo-block-text_link">Essai gratuit</a>
+                    <a href="{{ url("/abonne/invite")  }}" class="tzinfo-block-text_link">{{ trans('abonne.abonne_invite') }}</a>
                 </div>
                 <p class="tzinfo-line"></p>
                 <div class="tzinfo-block-text_text">

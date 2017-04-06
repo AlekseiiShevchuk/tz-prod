@@ -11,13 +11,14 @@
 
         @if(Auth::check() && Auth::user()->is_email_valid == 0)
             <div class="alert membre-block-form">
-                Confirm your email please!
+                Avant de pouvoir utiliser le site, vous devez confirmer votre adresse email.
+                Vérifiez votre boîte de réception pour cliquer sur le lien de validation dans l’email que nous vous avons envoyé.
             </div>
         @endif
 
         @if(Auth::check() && (Auth::user()->country_id == 1 || empty(Auth::user()->name)))
             <div class="alert membre-block-form">
-                Please fill Country and Name fields before you can use all site features!
+                Vous devez également entrer votre prénom et le pays dans lequel vous résidez.
             </div>
         @endif
 

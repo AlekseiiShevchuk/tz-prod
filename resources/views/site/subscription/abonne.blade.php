@@ -30,7 +30,8 @@
                         <div class="sale-finish">
                             {!!  trans('abonne.current') !!}
                         </div>
-                        <a href="{{ url( $details_url . $plan->id ) }}" ajax="true" class="button-buy {{ Auth::user()->is_email_valid == '1' ?: 'verif_email' }}">
+                        {{--<a href="{{ url( $details_url . $plan->id ) }}" ajax="true" class="button-buy {{ Auth::user()->is_email_valid == '1' ?: 'verif_email' }}">--}}
+                        <a href="{{ url( $details_url . $plan->id ) }}" class="button-buy {{ Auth::user()->is_email_valid == '1' ?: 'verif_email' }}">
                             {!!  trans('abonne.buy') !!}
                         </a>
                         <p class="block-buy_total">
