@@ -9,11 +9,11 @@
     @endif
 
     <div class="abonne">
-        <div class="block-buy">
             <div class="block-button">
                 {{--<a ajax="true" href="{{ url("/abonne/invite")  }}" class="subscr-button">{{ trans('abonne.abonne_invite') }}</a>--}}
                 <a href="{{ url("/abonne/invite")  }}" class="subscr-button">{{ trans('abonne.abonne_invite') }}</a>
             </div>
+        <div class="block-buy">
             <div class="block-buy-wrapper">
                 @foreach($plans as $plan)
                     <div class="block-buy_one">
@@ -41,6 +41,6 @@
                 @endforeach
             </div>
         </div>
-        <div class="text-abone">{!!  trans('abonne.text') !!}</div>
     </div>
+        <div class="text-abone">{!!  trans('abonne.text') !!}</div>
 </div>
