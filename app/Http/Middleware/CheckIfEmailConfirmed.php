@@ -18,6 +18,8 @@ class CheckIfEmailConfirmed
         if (
             request()->route()->getPath() == 'contacts'
             || request()->route()->getPath() == 'membre'
+            || request()->route()->getPath() == 'logout'
+            || request()->route()->getName() == 'emailVerify'
         ) {
             return $next($request);
         }

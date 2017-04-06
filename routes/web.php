@@ -29,7 +29,7 @@ Route::group([ 'middleware' => 'trailing_slashes' ], function(){
         Route::get('login', 'AuthController@showForm');
         Route::post('login', 'AuthController@loginOrRegistration');
 
-        Route::get('email/verif/{id}/{code}', 'AuthController@emailValidation');
+        Route::get('email/verif/{id}/{code}', 'AuthController@emailValidation')->name('emailVerify');
 
         Route::get('/', 'IndexController@info');
         Route::get('meditation', 'IndexController@meditation');
