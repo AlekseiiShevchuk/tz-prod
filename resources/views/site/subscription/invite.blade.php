@@ -5,9 +5,9 @@
     <div class="invite">
         <div class="invite-block">
             <div class="invite-img">
-                <div class="tzinfo-block-img ">
-                    <img src="/src/img/present.jpg">
-                </div>
+                {{--<div class="tzinfo-block-img ">--}}
+                    {{--<img src="/src/img/present.jpg">--}}
+                {{--</div>--}}
                 {!!  trans('invite.text') !!}
             </div>
             <p class="tzinfo-line"></p>

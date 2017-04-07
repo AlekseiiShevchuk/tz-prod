@@ -19,4 +19,10 @@ return [
     'email_valid_text' => 'Vous vous êtes inscrit sur Turbulence Zéro',
     'email_valid_footer' => 'Merci de votre confiance.<br>L’équipe de Turbulence Zéro',
     'email_valid_link' => 'Pour valider votre adresse email, cliquez sur ce lien :',
+
+    'text-top' => '<p>Entrez votre adresse email et votre mot de passe pour accéder à l’ensemble du site. </p>
+<p>Si ceci est votre première visite, entrez le mot de passe de votre choix.</p>
+<p>Aucune autre information n’est nécessaire pour accéder à Turbulence Zéro, mais nous vous encourageons vivement à compléter votre profil 
+dès que vous aurez un moment.</p>
+</p>'
 ];

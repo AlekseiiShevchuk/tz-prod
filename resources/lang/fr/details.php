@@ -2,7 +2,7 @@
 return [
     'card-holder' => 'Prénom et nom du titulaire',
     'card-number' => 'Numéro de la carte',
-    'cvc' => 'Code',
+    'cvc' => 'CVV',
     'button' => 'VALIDER',
-    'cvc-text' => 'Code: entrez les trois derniers chiifre vers la droite au dos de votre carte.',
+    'cvc-text' => 'CVV (Cryptogramme visuel) : entrez les trois derniers chiffres au dos de la carte.',
 ];

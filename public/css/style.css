@@ -572,6 +572,12 @@ p.block-buy_time {
     margin-right: 5px;
 }
 
+.text-abone-top {
+    text-align: center;
+    color: #4e69b0;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
 .text-abone {
     text-align: center;
     color: #4e69b0;
@@ -1052,7 +1058,9 @@ label.check-box {
 .tzinfo-block-img > .tzinfo-line {
     margin-top: 34px;
 }
-
+.tzinfo-block-img > .tzinfo-line.tzinfo-line-first {
+    margin-top: 0;
+}
 .tzinfo-block-text {
     width: 745px;
     display: inline-block;

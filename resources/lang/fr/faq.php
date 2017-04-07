@@ -22,11 +22,15 @@ Utilisez le formulaire de contact.</p>
     'title-7' => 'Mes pensées ne cessent de surgir, que faire ?',
     'title-8' => 'Maintenant que je médite régulièrement comment sera ma vie quotidienne ?',
 
-    'text-1' => '<p>La méditation peut être pratiquée par n\'importe qui. La pratique de la méditation nous permet d’apprendre le fonctionnement de l\'esprit et d’observer comment les pensées et les émotions gouvernent notre vie si nous laissons faire l’esprit. <br />
-Il n’est pas nécessaire de pratiquer une croyance particulière ou d’avoir une foi profonde. De nombreux sages ont utilisé la méditation comme un moyen d\'approfondir leur compréhension et leur expérience de leur propre foi mais aussi tout simplement pour comprendre et accepter le sens profond de la vie. <br />
-La méditation est aussi enseignée et pratiquée dans de nombreux endroits pour soulager le stress et faire face à la douleur chronique par exemple.<br />
-Beaucoup de scientifiques se penchent sur la méditation depuis quelques décennies et en constatent les bénéfices dans leurs études.<br />
-En un mot comme en cent : tout le monde gagne quelque chose à pratiquer la méditation. Nous-mêmes bien sûr mais aussi ceux autours de nous.</p>',
+    'text-1' => '<p>La méditation peut être pratiquée par n\'importe qui. La pratique de la méditation nous permet d’apprendre le fonctionnement 
+de l\'esprit et d’observer comment les pensées et les émotions gouvernent notre vie si nous laissons faire l’esprit. <br>
+Il n’est pas nécessaire de pratiquer une croyance particulière ou d’avoir une foi profonde. De nombreux sages ont utilisé la méditation comme 
+un moyen d\'approfondir leur compréhension et l\'expérience de leur propre foi mais aussi tout simplement pour comprendre et accepter le sens 
+profond de la vie. <br>
+La méditation est aussi enseignée et pratiquée dans de nombreux endroits pour soulager le stress et faire face à la douleur chronique par exemple. <br>
+Beaucoup de scientifiques se penchent sur la méditation depuis quelques décennies et en constatent les bénéfices dans leurs études. <br>
+En un mot comme en cent : tout le monde gagne quelque chose à pratiquer la méditation. Nous-mêmes bien sûr mais aussi ceux qui nous entourent.
+</p>',
     'text-2' => '<p>La méditation a de nombreux avantages. D\'une manière générale, la méditation nous permet d\'accéder aux qualités innées de l\'esprit, à la paix et à la sérénité. <br />
 Lorsque nous sommes pleinement conscients de la clarté et de la tranquillité de l’esprit nous réalisons que tout ce qui nous bouleverse est fabriqué par l’esprit si nous le laissons faire et croyons tout ce qu’il tente de nous imposer.<br />
 Un peu comme si nous vivions en gage et que la porte de cette cage est grand ouverte mais nous ne le voyons pas. <br />
@@ -40,11 +44,13 @@ De manière générale, le désir de trouver la sérénité suffit à nous pouss
 Dans tous les cas, comme dans beaucoup d’autre domaine, il est utile de trouver une ou plusieurs personnes qui peuvent nous guider.<br />
 Nous avons toutefois un conseil : ne suivez jamais quelqu’un qui se proclame Maître ou qui semble connaître la méditation mieux que tout le monde ni une communauté ou une organisation qui prêche .<br />
 Depuis des millénaires, les Maîtres authentique n’ont jamais proclamé quoique ce soit les concernant. Ils ont simplement partagé leur propre expérience de génération en génération et ce sont les élèves qui les ont qualifiés de Maîtres.</p>',
-    'text-4' => '<p>Lorsque l’on médite notre but est d’être capable de devenir pleinement conscient à chaque moment de la vie, chaque moment de la journée. Pour atteindre cet objectif, il est évident que au plus souvent l’on médite au plus nous devenons conscients sans effort quel qu’il soit. <br />
-Méditer tous les jours nous semble vraiment nécessaire. <br />
-Mais cela ne signifie pas qu’il faille que nous nous asseyions tous les jours pendant de longs moments. Nous en parlons ci-dessous. <br />
-Entrainer l’esprit n’est pas différent d’entrainer le corps. <br />
-Un athlète ou un artiste pratique leur sport ou leur art tous les jours aussi.</p>',
+    'text-4' => '<p>Lorsque l’on médite notre but est d’être capable de devenir pleinement conscient à chaque moment de la vie, chaque moment de la
+journée. Pour atteindre cet objectif, il est évident qu’au plus souvent l’on médite au plus nous devenons conscients sans effort quel qu’il 
+soit.<br> 
+Méditer tous les jours nous semble vraiment nécessaire. <br>
+Mais cela ne signifie pas qu’il faille que nous nous asseyons tous les jours pendant de longs moments. Nous en parlons ci-dessous. <br>
+Entraîner l’esprit n’est pas différent d’entraîner le corps. <br>
+Un athlète ou un artiste pratique son sport ou son  art tous les jours aussi.</p>',
     'text-5' => '<p>Comme nous l’avons expliqué et expérimenté nous-mêmes, nous pouvons méditer en session formelle, en dédiant 10, 20 ou 30 minutes chaque jour à s’assoir pour méditer et en appliquant la posture en 7 points. <br />
 Il est toutefois indispensable de ne pas se forcer à avoir une session formelle la plus longue possible. <br />
 Mieux vaut de courtes sessions bénéfiques que de baisser les bras parce que « c’est trop long, trop ennuyeux, trop formel ! »<br />
@@ -63,13 +69,16 @@ Le piège lorsque l’on débute est de vouloir arrêter de penser. Au plus nous
 Que faire ? Simplement prendre conscience de la pensée du moment et la laisser aller en revenant sur le support actuel de la méditation ou simplement en glissant notre attention sur le fait que nous vivons le moment présent.<br />
 Dans nos différentes séries nous apprenons aussi à noter la pensée qui survient. Comme si l’on écrivait sur un papier ce qu’elle est. De cette manière on s’en « débarrasse » et nous ne nous y accrochons pas.<br />
 Un peu comme un dialogue intérieur avec l’esprit en lui disant « je te vois venir, mais je ne reste pas ».</p>',
-    'text-8' => '<p>Nous ne devons surtout pas approcher les résultats de notre pratique comme si nous attendions un résultat concret. Nous ne faisons pas gonfler un muscle ni nous ne cherchons une performance.<br />
-Les changements sont très rapides mais progressifs et ils continueront tant que nous pratiquons.<br />
-En quelques semaines nous réalisons que nous sommes moins nerveux en général et que les moments de vraie sérénité sont plus fréquents.<br />
-Mais surtout nous allons peu à peu réaliser que nous développons nos qualités intérieures telle que l’amour bienveillant pout les autres, la compassion.<br />
-Tous ces changements progressifs impactent notre vie de tous les jours dans tous ses aspects.<br />
-Nous sommes plus concentré dans nos activités professionnelles, plus créatifs et entreprenant dans toutes nos activités.<br />
-Mais surtout nous commençons à trouver une sensation de balance émotionnelle. <br />
-Cela nous permet de voir les situations et les êtres vivants sous un autre angle.<br />
-Au lieu d’être méfiants et craintifs nous devenons ouverts à la vie et aux autres sans préjugés.</p>',
+    'text-8' => '<p>Nous ne devons surtout pas approcher les résultats de notre pratique comme si nous attendions un résultat concret. 
+Nous ne faisons pas gonfler un muscle ni ne cherchons une performance. <br>
+Les changements sont très rapides, mais progressifs et ils continueront tant que nous pratiquerons. <br>
+En quelques semaines nous réaliserons que nous sommes moins nerveux en général et que les moments de vraie sérénité sont plus fréquents. <br>
+Mais surtout nous allons peu à peu réaliser que nous développons nos qualités intérieures telle que l’amour bienveillant pour les autres, 
+la compassion. <br>
+Tous ces changements progressifs impactent notre vie de tous les jours dans tous ses aspects. <br>
+Nous sommes plus concentrés dans nos activités professionnelles, plus créatifs et entreprenants dans toutes nos activités. <br>
+Mais surtout nous commençons à trouver une sensation de balance émotionnelle.  <br>
+Cela nous permet de voir les situations et les êtres vivants sous un autre angle. <br>
+Au lieu d’être méfiants et craintifs nous devenons ouverts à la vie et aux autres sans préjugés.
+</p>',
     ];
