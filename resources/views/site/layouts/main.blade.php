@@ -2,14 +2,14 @@
 <html lang="{{App::getLocale()}}">
 <head>
     <meta charset="UTF-8">
-    <meta property="fb:app_id"        content="{{ $_ENV['FACEBOOK_APP_ID'] }}" />
+    <meta property="fb:app_id"        content="{{ env('FACEBOOK_APP_ID') }}" />
     <meta property="og:type"          content="website" />
-    <meta property="og:url"           content="{{ $_ENV['APP_URL'] }}" />
+    <meta property="og:url"           content="{{ env('APP_URL') }}" />
     @if ($title ?? '')
         <meta property="og:title"     content="{{ strip_tags(trans('info.title')) }}" />
     @endif
     <meta property="og:description"   content="{{ strip_tags(trans('index.carousel-block_text-1')) }}" />
-    <meta property="og:image"         content="{{ $_ENV['APP_URL'] }}/src/img/logo-blue.png" />
+    <meta property="og:image"         content="{{ env('APP_URL') }}/src/img/logo-blue.png" />
     <meta name="description"          content="{{ strip_tags(trans('index.carousel-block_text-1')) }}" />
 
     <title>@if (isset($title) && $title) {{ $title }} @endif</title>
@@ -24,9 +24,9 @@
 <body @if (isset($blue_style) && $blue_style )class="blue-style" @endif itemscope itemtype="http://schema.org/WebSite">
 
 <div class="hidden" itemprop="name">{{ strip_tags(trans('info.title')) }}</div>
-<img class="hidden" itemprop="image" src="{{ $_ENV['APP_URL'] }}/src/img/logo-blue.png" />
+<img class="hidden" itemprop="image" src="{{ env('APP_URL') }}/src/img/logo-blue.png" />
 <div class="hidden" itemprop="description">{{ strip_tags(trans('index.carousel-block_text-1')) }}</div>
-<div class="hidden" itemprop="url">{{ $_ENV['APP_URL'] }}</div>
+<div class="hidden" itemprop="url">{{ env('APP_URL') }}</div>
 
 <div class="wrapper">
     <div id="header" class="header" style="padding-left: 22px;">
@@ -59,10 +59,10 @@
             </li>
             <li>
                 <div class="footer_soc-net">
-                    <a href="https://plus.google.com/share?url={{$_ENV['APP_URL']}}?hl={{App::getLocale()}}">
+                    <a href="https://plus.google.com/share?url={{env('APP_URL')}}?hl={{App::getLocale()}}">
                         <img src="/src/img/gog+.png" alt="Share on Google+"/>
                     </a>
-                    <a href="http://www.facebook.com/sharer/sharer.php?u={{$_ENV['APP_URL']}}">
+                    <a href="http://www.facebook.com/sharer/sharer.php?u={{env('APP_URL')}}">
                         <img src="/src/img/facebook2.png">
                     </a>
                     {{--<a href="#"><img src="src/img/twit.png"></a>--}}
