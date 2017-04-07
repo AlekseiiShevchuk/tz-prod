@@ -6,7 +6,7 @@
         <p class="tzinfo-line library-line"></p>
         <div class="tzinfo-block tzinfo-block_min-width-meditation">
             <div class="tzinfo-block-img">
-                <img src="src/img/image-4.jpg">
+                <img src="src/img/Image_Library_01.jpg">
             </div>
             <div class="tzinfo-block-text">
                 <div class="tzinfo-block-text_text">

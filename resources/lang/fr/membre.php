@@ -20,10 +20,10 @@ return [
     'exit' => 'Retour',
     'photo' => 'Photo',
     'save' => 'Sauvegarder',
-    'text-beginning' => 'Aucune des informations de votre profil n\'est publique.<br />Seul votre Pseudo et photo seront visibles dans le Forum.',
+    'text-beginning' => 'Aucune des informations de votre profil n\'est publique.',
     'text-under-button' => 'Si vous éprouvez des difficultés, n\'hésitez pas à nous contacter.',
-    'password' => 'Si vous désirez un nouveau mot de passe, tapez le dans la première case et confirmez le dans la seconde.
-Ne tapez rien pour conserver votre mot de passe actuel.',
+    'password' => 'Si vous désirez modifier votre mot de passe, tapez le dans la première case et confirmez le dans la seconde. 
+    Ne tapez rien pour conserver votre mot de passe actuel.',
     'nickname_is_exists' => 'Ce pseudo est déjà utilisé. Choisissez-en un autre ou contactez-nous.',
     'phone_is_exists' => 'Ce numéro de téléphone est déjà utilisé. Choisissez-en un autre ou contactez-nous.',
     'subscribe_news' => 'Recevoir des informations de Turbulence Zéro'

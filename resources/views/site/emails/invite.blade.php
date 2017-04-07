@@ -12,6 +12,14 @@
     Pour en profitez cliquez sur ce lien : <a href="{{ $url }}">Aller sur le site.</a>
 </p>
 <p>
+    Voici vos informations de connexion :
+</p>
+<p>
+    {{ trans('app.email') }} : {{ $data['email-friend'] }}
+    <br>
+    {{ trans('app.password') }} : {{ $password }}
+</p>
+<p>
     Merci de votre confiance. <br>
     L’équipe de Turbulence Zéro
 </p>

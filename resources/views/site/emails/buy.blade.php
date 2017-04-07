@@ -10,6 +10,7 @@
     Il se terminera le {{ $end_access_date }}
 </p>
 <p>
+    Merci de votre confiance. <br>
     L’équipe de Turbulence Zéro
 </p>
 
