@@ -9,6 +9,7 @@
     @endif
 
     <div class="abonne">
+            <div class="text-abone-top">{!!  trans('abonne.text-top') !!}</div>
             <div class="block-button">
                 {{--<a ajax="true" href="{{ url("/abonne/invite")  }}" class="subscr-button">{{ trans('abonne.abonne_invite') }}</a>--}}
                 <a href="{{ url("/abonne/invite")  }}" class="subscr-button">{{ trans('abonne.abonne_invite') }}</a>

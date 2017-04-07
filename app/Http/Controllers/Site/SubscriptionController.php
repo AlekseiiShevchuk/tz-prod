@@ -361,7 +361,7 @@ class SubscriptionController extends Controller
                         'end_access_date' => $endDate->format('d.m.Y'),
                     ], function ($message) use ($email) {
                         $message->to($email);
-                        $message->subject(trans('subscription.email_subject'));
+                        $message->subject(trans('subscription.email_subject_new'));
                     });
                 }
             }

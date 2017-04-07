@@ -23,29 +23,16 @@ Nous étions là, avons fait ça et nous avons progressé, beaucoup.
                         <p>- Vous pouvez commencer à créer les bases d’une existence plus paisible, plus joyeuse et aimante en choisissant l’un de nos programmes.</p>
                         <p>- Vous n’êtes pas seul. Le décompte jusqu’à la Turbulence Zéro est plus facile quand vous le partagez avec d’autres qui l’on fait eux-mêmes ou le font avec vous.</p>',
     'title-3' => 'Mais encore :',
-    'text-3' => '<p>Turbulence Zéro est le produit d’un groupe de gens qui ont radicalement réduit les effets des
-
-                        influences extérieures sur leur vie et évolué vers une vie plus paisible en modifiant leurs habitudes et
-
-                        leurs attitudes.<br />
-                    Nous avons investi des centaines d’heures de recherches, d’écriture et d’enregistrement pour créer
-
-                        les fondations de séries de méditation guidée par la voix.</p>
-                    <div>
-                        <p>Nos carrières (DJ, producteur, animateur, publicitaire, graphiste, artiste…) ont été parallèles, se sont
-
-                        <p>souvent croisée au fil des années.</p>
-
-                        <p>Nos chemins ont été différents, mais nos histoires respectives nous ont réunis.</p>
-
-                        <p>Nos comportements, nos tendances sont pleines de similitudes, trop pour être des coïncidences.</p>
-
-                        <p>Nous avons fait face à nos problèmes communs et avons exploré des solutions éprouvées,
-
-                            collectivement et individuellement.</p>
-
-                        <p>Il semble que tout ceci ait été écrit, y compris l\'arrivée de Turbulence Zéro.</p>
-                    </div>',
+    'text-3' => '<p>Turbulence Zéro est le produit d’un groupe de gens qui ont radicalement réduit les effets des influences extérieures sur leur 
+vie et évolué vers une vie plus paisible en modifiant leurs habitudes et leurs attitudes..</p>
+<p>Nous avons investi des centaines d’heures de recherches, d’écriture et d’enregistrement pour créer les fondations de séries de méditation guidée
+par la voix. Nos carrières (DJ, producteur, animateur, publicitaire, graphiste, artiste…) ont été parallèles, se sont souvent croisées au fil 
+des années.</p>
+<p>Nos chemins ont été différents, mais nos histoires respectives nous ont réunis. <br>
+Nos comportements, nos tendances sont pleines de similitudes, trop pour être des coïncidences.<br>
+Nous avons fait face à nos problèmes communs et avons exploré des solutions éprouvées, collectivement et individuellement. <br>
+Il semble que tout ceci ait été écrit, y compris l\'arrivée de Turbulence Zéro.
+</p>',
 
 
 ];

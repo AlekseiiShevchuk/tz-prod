@@ -520,8 +520,8 @@ p.block-buy_time {
     margin-top: -20px;
     font-weight: bold;
     width: 160px;
-    height: 58px;
-    line-height: 4;
+    height: 44px;
+    line-height: 44px;
 }
 
 .current_plan .button-buy {
@@ -572,9 +572,17 @@ p.block-buy_time {
     margin-right: 5px;
 }
 
+.text-abone-top {
+    text-align: center;
+    /*color: #4e69b0;*/
+    color: #9a9a9a;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
 .text-abone {
     text-align: center;
-    color: #4e69b0;
+    /*color: #4e69b0;*/
+    color: #9a9a9a;
     font-size: 14px;
     margin-top: 15px;
 }
@@ -1025,7 +1033,7 @@ label.check-box {
 
 .tzinfo-line.library-line {
     border-bottom: 1px solid #cdcdcd;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     margin-top: 30px;
 }
 
@@ -1040,6 +1048,8 @@ label.check-box {
 
 .tzinfo-block_min-width-meditation {
     min-height: 300px;
+    display: flex;
+    align-items: center;
 }
 
 .tzinfo-block-img {
@@ -1052,7 +1062,9 @@ label.check-box {
 .tzinfo-block-img > .tzinfo-line {
     margin-top: 34px;
 }
-
+.tzinfo-block-img > .tzinfo-line.tzinfo-line-first {
+    margin-top: 0;
+}
 .tzinfo-block-text {
     width: 745px;
     display: inline-block;
@@ -1460,7 +1472,9 @@ select:focus, input:focus, button:focus, textarea:focus {
 .alert.membre-block-form {
     padding-bottom: 30px;
     text-align: center;
-    font-size: 24px;
+    /*font-size: 24px;*/
+    font-size: 14px;
+    color: red;
 }
 
 .alert.membre-block-form.error {
@@ -2385,4 +2399,8 @@ p.invite-title {
     top: 14px;
     color: #4e69b0;
     font-size: 22px;
+}
+
+.press-text {
+    text-align: center;
 }

@@ -4,6 +4,9 @@
 <div class="content-white">
     <div name="membre" class="membre">
         <div class="membre-block-form">
+            <div class="text-abone-top">
+                {!!  trans('login.text-top') !!}
+            </div>
             <p></p>
             <form action="" method="post" role="form" class="membre-form crop" action="{{ url('/login') }}">
                 {{ csrf_field() }}

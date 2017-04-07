@@ -3,10 +3,12 @@
     Bonjour {{ $data['name-friend'] }}
 </p>
 <p>
-    {{ $data['name'] }} vous a offert un abonnement à Turbulence Zéro.
+    {{--{{ $data['name'] }} vous a offert un abonnement à Turbulence Zéro.--}}
+    L’équipe de Turbulence Zéro vous a offert un abonnement pour que vous puissiez découvrir
+    les bienfaits de la méditation et notre site.
 </p>
 <p>
-    Cet abonnement se terminera le {{ $end_access_date }}.
+    Votre abonnement se terminera le {{ $end_access_date }}.
 </p>
 <p>
     Pour en profitez cliquez sur ce lien : <a href="{{ $url }}">Aller sur le site.</a>

@@ -7,7 +7,7 @@
         <p class="tzinfo-line"></p>
         <div class="tzinfo-block tzinfo-block_min-width-meditation">
             <div class="tzinfo-block-img">
-                <img src="src/img/image-1.jpg">
+                <img src="src/img/Image_Meditation_01.jpg">
             </div>
             <div class="tzinfo-block-text">
                 <div class="tzinfo-block-text_text">
@@ -20,7 +20,7 @@
         <p class="tzinfo-line"></p>
         <div class="tzinfo-block tzinfo-block_min-width-meditation">
             <div class="tzinfo-block-img">
-                <img src="src/img/imade-2.jpg">
+                <img src="src/img/Image_Meditation_02.jpg">
             </div>
             <div class="tzinfo-block-text">
                 <div class="tzinfo-block-text_text">
@@ -32,7 +32,7 @@
         <p class="tzinfo-line"></p>
         <div class="tzinfo-block tzinfo-block_min-width-meditation">
             <div class="tzinfo-block-img">
-                <img style="width: 180px" src="src/img/image-3.jpg">
+                <img style="width: 180px" src="src/img/Image_Meditation_03.jpg">
             </div>
             <div class="tzinfo-block-text">
                 <div class="tzinfo-block-text_text">

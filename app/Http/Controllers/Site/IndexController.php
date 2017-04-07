@@ -133,7 +133,7 @@ class IndexController extends Controller {
         try {
             Mail::send('site.emails.contacts', [ 'data' => $data ], function($message) use ($to){
                 $message->to($to);
-                $message->subject('From contact form');
+                $message->subject('Contact depuis le formulaire du site');
             });
 
             Session::flash('flash_message', trans('contacts.sended'));
