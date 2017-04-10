@@ -182,8 +182,8 @@
                     self.soundsByURL[ url ] = sound;
 
                     if(self.currentSound){
-                         self.stopSound(self.currentSound);
-                        self.currentSound.pause();
+                        self.stopSound(self.currentSound);
+                        //self.currentSound.pause();
                     }
 
                     sound.play();
