@@ -14,6 +14,8 @@
 
     <title>@if (isset($title) && $title) {{ $title }} @endif</title>
 
+     <link rel="shortcut icon" href="/src/img/favicon.ico" type="image/x-icon">
+
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/fonts.css" rel="stylesheet">
     {{--<link href="/css/app.css" rel="stylesheet">--}}
@@ -62,7 +64,7 @@
                     <a href="https://plus.google.com/share?url={{env('APP_URL')}}?hl={{App::getLocale()}}&text=La méditation est un exercice, rien d’autre.
 Venez découvrir gratuitement la façon la plus facile d’appréhender la méditation, sans gourou ni cours, tout simplement avec Turbulence Zéro.  Nous vous proposons des séries d’exercices pratiques et de partager avec nous votre expérience.
 ">
-                        <img src="/src/img/gog+.png" alt="Share on Google+"/>
+                        <img src="/src/img/gog.png" alt="Share on Google+"/>
                     </a>
                     <a href="http://www.facebook.com/sharer/sharer.php?u={{env('APP_URL')}}&text=La méditation est un exercice, rien d’autre.
 Venez découvrir gratuitement la façon la plus facile d’appréhender la méditation, sans gourou ni cours, tout simplement avec Turbulence Zéro.  Nous vous proposons des séries d’exercices pratiques et de partager avec nous votre expérience.

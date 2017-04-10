@@ -3,20 +3,30 @@
 </div>
 <div class="content-white">
     <div class="tzinfo">
-        <div class="tzinfo-block tzinfo-block_min-width">
+        <div class="tzinfo-block">
+          <div class="block-info-text">
+              <p class="tzinfo-block-text_title">{!!  trans('info.title-1') !!}</p>
+              {{--<p class="tzinfo-block-text_title">{!!  trans('info.title-1') !!}</p>--}}
+              {{--<a  ajax="true" href="library?category=2" class="tzinfo-block-text_link">Essai gratuit</a>--}}
+              {{--<a  ajax="true" href="{{ url("/abonne/invite")  }}" class="tzinfo-block-text_link">{{ trans('abonne.abonne_invite') }}</a>--}}
+              <a href="library?category=2" class="tzinfo-block-text_link tzinfo-block-text_link-mrg-l">Essai gratuit</a>
+              <a href="{{ url("/abonne/invite")  }}" class="tzinfo-block-text_link">{{ trans('abonne.abonne_invite') }}</a>
+          </div>
+        </div>
+        <div class="tzinfo-block">
             <div class="tzinfo-block-img">
-                <p class="tzinfo-block-text_title">{!!  trans('info.title-1') !!}</p>
+                <!-- <p class="tzinfo-block-text_title">{!!  trans('info.title-1') !!}</p> -->
                 <p class="tzinfo-line tzinfo-line-first"></p>
                 <img src="src/img/Image_Home_01.jpg">
             </div>
             <div class="tzinfo-block-text">
-                <div class="block-info-text">
+                <!-- <div class="block-info-text">
                     {{--<p class="tzinfo-block-text_title">{!!  trans('info.title-1') !!}</p>--}}
                     {{--<a  ajax="true" href="library?category=2" class="tzinfo-block-text_link">Essai gratuit</a>--}}
                     {{--<a  ajax="true" href="{{ url("/abonne/invite")  }}" class="tzinfo-block-text_link">{{ trans('abonne.abonne_invite') }}</a>--}}
                     <a href="library?category=2" class="tzinfo-block-text_link">Essai gratuit</a>
                     <a href="{{ url("/abonne/invite")  }}" class="tzinfo-block-text_link">{{ trans('abonne.abonne_invite') }}</a>
-                </div>
+                </div> -->
                 <p class="tzinfo-line"></p>
                 <div class="tzinfo-block-text_text">
                     {!!  trans('info.text-1') !!}
@@ -24,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="tzinfo-block tzinfo-block_min-width">
+        <div class="tzinfo-block">
             <div class="tzinfo-block-img">
                 <p class="tzinfo-line"></p>
                 <img src="src/img/Image_Home_02.jpg">
@@ -39,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <div class="tzinfo-block tzinfo-block_min-width">
+        <div class="tzinfo-block">
             <div class="tzinfo-block-img">
                 <p class="tzinfo-line"></p>
                 <img src="src/img/Image_Home_03.jpg">

@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -77,7 +78,8 @@ body:not(.blue-style) .header {
     margin-right: 45px;
     text-align: right;
     margin-top: 14px;
-    width: 120px;
+    /*width: 120px;*/
+    width: 95px;
     margin-left: -40px;
 }
 
@@ -447,7 +449,8 @@ body:not(.blue-style) .footer_menu {
     width: 180px;
     /*height: 255px;*/
     border: 1px solid #cdcdcd;
-    margin: 50px 8px 0 0;
+    /*margin: 50px 8px 0 0;*/
+    margin: 10px 8px 19px 0;
     border-radius: 5px;
     padding-top: 40px;
     text-align: center;
@@ -824,7 +827,7 @@ p.block-buy_time {
 .membre {
     margin: 0 auto;
     width: 1000px;
-    margin-top: -30px;
+    /*margin-top: -30px;*/
 }
 
 .membre-block-form {
@@ -1088,6 +1091,25 @@ p.tzinfo-block-text_title {
     float: left;
 }
 
+/*.block-info-text-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block-info-text-flex > p.tzinfo-block-text_title {
+  flex: 1;
+  text-align: left;
+}
+
+.block-info-text-flex a.tzinfo-block-text_link {
+      flex: 1;
+}
+
+.block-info-text-flex a.tzinfo-block-text_link:last-of-type {
+  flex: 1;
+  text-align: right;
+}*/
+
 a.tzinfo-block-text_link {
     font-size: 16px;
     color: #294872;
@@ -1096,6 +1118,9 @@ a.tzinfo-block-text_link {
     margin-bottom: 0;
     display: inline-block;
     text-decoration: none;
+}
+.tzinfo-block-text_link-mrg-l {
+  margin-left: 65px;
 }
 
 a.tzinfo-block-text_link:hover {
@@ -1470,7 +1495,7 @@ select:focus, input:focus, button:focus, textarea:focus {
 }
 
 .alert.membre-block-form {
-    padding-bottom: 30px;
+    /*padding-bottom: 30px;*/
     text-align: center;
     /*font-size: 24px;*/
     font-size: 14px;
@@ -2403,4 +2428,5 @@ p.invite-title {
 
 .press-text {
     text-align: center;
+    color: #9a9a9a;
 }

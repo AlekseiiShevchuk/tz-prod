@@ -4,8 +4,8 @@ return [
         'zero' => 'Accueil',
         'meditation' => 'La méditation',
         'library' => 'La chaîne méditation',
-        'profile' => 'Membre',
-        'subscription' => 'Abonnement',
+        'profile' => 'Mon profil',
+        'subscription' => 'Espace abonné',
         'contacts' => 'Contacts',
         'forum' => 'Forum & Aide'
     ],

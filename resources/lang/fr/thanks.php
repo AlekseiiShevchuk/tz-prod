@@ -1,7 +1,7 @@
 <?php
 return [
     'text' => '<p>Turbulence Zéro exprime sa gratitude envers ceux et celles qui ont rendu ce projet possible.
-Notre désir de partager notre propre expérience avec le plus grand nombre n’aurait pas été possible sans leur soutien, sans leur contribution.
+Notre désir de partager notre propre expérience avec le plus grand nombre n’aurait pas été possible sans leur soutien, sans leur contribution. <br>
 Grâce à vous tous qui avez pris une part dans la réalisation du projet et à vous tous qui utilisez Turbulence Zéro, nous avons pu mettre en place un moyen simple, facile d’utilisation, pour découvrir ou améliorer notre pratique de la méditation.
 </p>
 <div style="margin-top: 20px;">
