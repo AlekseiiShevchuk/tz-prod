@@ -5,9 +5,9 @@
     <div class="tzinfo">
 
         <p class="tzinfo-line"></p>
-        <div class="tzinfo-block tzinfo-block_min-width-meditation">
+        <div class="tzinfo-block">
             <div class="tzinfo-block-img">
-                <img src="src/img/Image_Meditation_01.jpg">
+                <img src="src/img/Image_Meditation_01.jpg" style="object-fit: cover;" width="185px" height="225px">
             </div>
             <div class="tzinfo-block-text">
                 <div class="tzinfo-block-text_text">
@@ -18,9 +18,9 @@
         </div>
 
         <p class="tzinfo-line"></p>
-        <div class="tzinfo-block tzinfo-block_min-width-meditation">
+        <div class="tzinfo-block">
             <div class="tzinfo-block-img">
-                <img src="src/img/Image_Meditation_02.jpg">
+                <img src="src/img/Image_Meditation_02.jpg" style="object-fit: cover;" width="185px" height="246px">
             </div>
             <div class="tzinfo-block-text">
                 <div class="tzinfo-block-text_text">
@@ -30,9 +30,9 @@
         </div>
 
         <p class="tzinfo-line"></p>
-        <div class="tzinfo-block tzinfo-block_min-width-meditation">
+        <div class="tzinfo-block">
             <div class="tzinfo-block-img">
-                <img style="width: 180px" src="src/img/Image_Meditation_03.jpg">
+                <img style="object-fit: cover;" src="src/img/Image_Meditation_03.jpg" width="185px" height="435px">
             </div>
             <div class="tzinfo-block-text">
                 <div class="tzinfo-block-text_text">
