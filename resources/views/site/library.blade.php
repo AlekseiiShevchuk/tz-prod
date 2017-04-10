@@ -4,9 +4,9 @@
 <div class="content-white content-library">
     <div class="library">
         <p class="tzinfo-line library-line"></p>
-        <div class="tzinfo-block tzinfo-block_min-width-meditation">
+        <div class="tzinfo-block">
             <div class="tzinfo-block-img">
-                <img src="src/img/Image_Library_01.jpg">
+                <img src="src/img/Image_Library_01.jpg" style="object-fit: cover;" width="185px" height="248px">
             </div>
             <div class="tzinfo-block-text">
                 <div class="tzinfo-block-text_text">

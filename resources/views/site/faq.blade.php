@@ -6,7 +6,7 @@
         <p class="tzinfo-line"></p>
         <div class="tzinfo-block">
             <div class="tzinfo-block-img">
-                <img src="/src/img/faq.png">
+                <img src="/src/img/faq.png" style="object-fit: cover;" width="185px" height="116px">
             </div>
             <div class="tzinfo-block-text">
                 <div class="tzinfo-block-text_text faq-text">

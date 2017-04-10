@@ -1031,12 +1031,12 @@ label.check-box {
 
 .tzinfo-line {
     border-bottom: 1px solid #cdcdcd;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .tzinfo-line.library-line {
     border-bottom: 1px solid #cdcdcd;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-top: 30px;
 }
 
@@ -1051,8 +1051,8 @@ label.check-box {
 
 .tzinfo-block_min-width-meditation {
     min-height: 300px;
-    display: flex;
-    align-items: center;
+    /*display: flex;
+    align-items: center;*/
 }
 
 .tzinfo-block-img {
@@ -2158,7 +2158,7 @@ ul > li.carousel-block_nav-active {
 }
 
 .img-meditation {
-    margin-top: 50px;
+    margin-top: 39px;
 }
 
 .popupS-content {
@@ -2267,9 +2267,10 @@ p.invite-title {
 }
 
 .faq-text {
-    padding-bottom: 35px;
+    /*padding-bottom: 35px;
     padding-top: 15px;
-    padding-left: 15px;
+    padding-left: 15px;*/
+    padding: 0;
 }
 
 .li-faq-text {
@@ -2283,7 +2284,7 @@ p.invite-title {
 
 .thanks-block-img {
     width: 155px;
-    height: 200px;
+    /*height: 200px;*/
     padding-top: 3px;
 }
 
