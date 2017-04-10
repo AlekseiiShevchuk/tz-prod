@@ -183,7 +183,6 @@
 
                     if(self.currentSound){
                         self.stopSound(self.currentSound);
-                        self.detectAudio(self.currentSound);
                         //self.currentSound.pause();
                     }
 
@@ -191,7 +190,6 @@
                 } else{
                     if(sound != self.currentSound && self.currentSound){
                         self.stopSound(self.currentSound);
-                        self.detectAudio(self.currentSound);
                         //self.currentSound.pause();
                     }
 
