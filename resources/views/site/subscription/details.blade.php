@@ -25,7 +25,7 @@
                         <strong>{{ $errors->first('holder') }}</strong>
                     </div>
                 @endif
-                <input type="text" id="holder" maxlength="32" placeholder="{!!  trans('details.card-holder') !!}" name="holder" required/>
+                <input type="text" id="holder" maxlength="32" placeholder="{!!  trans('details.card-holder') !!}" name="holder" pattern="^[a-zA-Z]+$" required title="Vérifiez le nom du détenteur de la carte. Ce nom ne semble pas valable." />
                 <label for="holder">*</label>
 
                 @if ($errors->has('pan'))
