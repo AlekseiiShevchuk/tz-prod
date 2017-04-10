@@ -182,16 +182,16 @@
                     self.soundsByURL[ url ] = sound;
 
                     if(self.currentSound){
-                        self.Player.setTime();
                         self.stopSound(self.currentSound);
+                        self.currentSound.setTime();
                         //self.currentSound.pause();
                     }
 
                     sound.play();
                 } else{
                     if(sound != self.currentSound && self.currentSound){
-                        self.Player.setTime();
                         self.stopSound(self.currentSound);
+                        self.currentSound.setTime();
                         //self.currentSound.pause();
                     }
 
