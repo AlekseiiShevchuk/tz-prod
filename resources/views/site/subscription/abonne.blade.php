@@ -10,10 +10,10 @@
 
     <div class="abonne">
             <div class="text-abone-top">{!!  trans('abonne.text-top') !!}</div>
-            <div class="block-button">
+            <!-- <div class="block-button">
                 {{--<a ajax="true" href="{{ url("/abonne/invite")  }}" class="subscr-button">{{ trans('abonne.abonne_invite') }}</a>--}}
                 <a href="{{ url("/abonne/invite")  }}" class="subscr-button">{{ trans('abonne.abonne_invite') }}</a>
-            </div>
+            </div> -->
         <div class="block-buy">
             <div class="block-buy-wrapper">
                 @foreach($plans as $plan)
@@ -41,6 +41,9 @@
                     </div>
                 @endforeach
             </div>
+        </div>
+        <div class="block-button">
+            <a href="{{ url("/abonne/invite")  }}" class="subscr-button">{{ trans('abonne.abonne_invite') }}</a>
         </div>
     </div>
         <div class="text-abone">{!!  trans('abonne.text') !!}</div>
