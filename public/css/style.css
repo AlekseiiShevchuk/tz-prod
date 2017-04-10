@@ -2429,4 +2429,14 @@ p.invite-title {
 .press-text {
     text-align: center;
     color: #9a9a9a;
+    /*text-decoration: none;*/
+}
+
+/*a.press-text:hover {
+  text-decoration: underline;
+}*/
+
+.tanks-popup-link {
+  padding: 5px 0;
+  display: block;
 }
