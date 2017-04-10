@@ -182,6 +182,7 @@
                     self.soundsByURL[ url ] = sound;
 
                     if(self.currentSound){
+                        self.Player.show();
                         self.stopSound(self.currentSound);
                         //self.currentSound.pause();
                     }
@@ -189,6 +190,7 @@
                     sound.play();
                 } else{
                     if(sound != self.currentSound && self.currentSound){
+                        self.Player.show();
                         self.stopSound(self.currentSound);
                         //self.currentSound.pause();
                     }
