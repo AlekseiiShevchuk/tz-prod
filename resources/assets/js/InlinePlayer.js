@@ -189,8 +189,8 @@
                     sound.play();
                 } else{
                     if(sound != self.currentSound && self.currentSound){
-                        // self.stopSound(self.currentSound);
-                        self.currentSound.stop();
+                        self.stopSound(self.currentSound);
+                        self.currentSound.pause();
                     }
 
                     sound.togglePause();
