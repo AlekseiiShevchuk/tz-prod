@@ -19,11 +19,11 @@
                     XLSX
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="extension" value="csv" checked>
+                    <input type="radio" name="extension" value="csv">
                     CSV
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="extension" value="pdf">
+                    <input type="radio" name="extension" value="pdf" checked>
                     PDF
                 </label>
 
