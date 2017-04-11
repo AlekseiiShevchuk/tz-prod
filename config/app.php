@@ -248,6 +248,6 @@ return [
 //    'cardinity_secret'  => 'dhsff2eqzxtssqrzq28zmxgnba5s52s30qhspowrdvdxwpaaw8',
 
 //  Prod
-    'cardinity_key' => 'test_ssnvgubv5m3yy56ozst7ebunimy25l',
-    'cardinity_secret' => 'eeqvf65qsri4vzvikxtzeeyozq3opclxpnqksxoc9qdzazbarq',
+    'cardinity_key' => 'gtokrjofnik7qmtm1frunplq0n4s0d',
+    'cardinity_secret' => 'dhsff2eqzxtssqrzq28zmxgnba5s52s30qhspowrdvdxwpaaw8',
 ];
