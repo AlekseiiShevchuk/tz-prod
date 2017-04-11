@@ -204,7 +204,11 @@ class SubscriptionController extends Controller
 
             return redirect()->back();
         } catch (\Cardinity\Exception\InvalidAttributeValue $exception) {
+            if($exception->getMessage() == 'Invalid Card Holder'){
+                Session::flash('flash_message', 'Vérifiez le nom du détenteur de la carte. Ce nom ne semble pas valable.');
+            }else{
             Session::flash('flash_message', $exception->getMessage());
+            }
             Session::flash('flash_message_type', 'error');
 
             return redirect()->back();
