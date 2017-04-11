@@ -16,8 +16,10 @@
 </p>
 <p>
     {{ trans('app.email') }} : {{ $data['email-friend'] }}
+@if(!empty($password))
     <br>
     {{ trans('app.password') }} : {{ $password }}
+@endif
 </p>
 <p>
     Merci de votre confiance. <br>

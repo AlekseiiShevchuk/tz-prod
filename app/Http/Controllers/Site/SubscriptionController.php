@@ -176,8 +176,8 @@ class SubscriptionController extends Controller
             //            $cardinity->set3DPassTestCase(true);
 
             $currentPlan = $cardinity->getPlan((int)$id);
-
             $payment = $cardinity->createCardPayment($card, $currentPlan);
+
 
             if ($payment->isPending()) {
                 Session::set('cardinity_payment', $payment->serialize());
@@ -192,7 +192,6 @@ class SubscriptionController extends Controller
 
             if ($payment->isApproved()) {
                 Session::flash('flash_message', 'Succès');
-
                 self::successPayment($currentPlan, $payment, Auth::user(), $invite);
 
                 return redirect('abonne/subscription');
