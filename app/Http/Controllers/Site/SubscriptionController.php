@@ -201,22 +201,21 @@ class SubscriptionController extends Controller
         } catch (\Cardinity\Exception\Declined $exception) {
             Session::flash('flash_message', $exception->getErrors()[0]);
             Session::flash('flash_message_type', 'error');
-
             return redirect()->back();
-        } catch (\Cardinity\Exception\InvalidAttributeValue $exception) {
 
-            if ($exception->getMessage() == 'Invalid Card Holder') {
+        } catch (\Cardinity\Exception\InvalidAttributeValue $exception) {
+            Session::flash('flash_message', $exception->getMessage());
+            Session::flash('flash_message_type', 'error');
+            return redirect()->back();
+
+        } catch (\Cardinity\Exception\ValidationFailed $exception) {
+            if ($exception->getErrors()[0]['message'] == 'invalid card holder.') {
                 Session::flash('flash_message',
                     'Vérifiez le nom du détenteur de la carte. Ce nom ne semble pas valable.');
             } else {
-                Session::flash('flash_message', $exception->getMessage());
+                Session::flash('flash_message', $exception->getErrors()[0]['message']);
             }
 
-            Session::flash('flash_message_type', 'error');
-
-            return redirect()->back();
-        } catch (\Cardinity\Exception\ValidationFailed $exception) {
-            Session::flash('flash_message', $exception->getErrors()[0]['message']);
             Session::flash('flash_message_type', 'error');
 
             return redirect()->back();

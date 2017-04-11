@@ -88,7 +88,6 @@ Route::group([ 'middleware' => 'trailing_slashes' ], function(){
 
     });
 
-    //TODO: etot govnokod nujno fixit. zakazchik vbivaaet v verhnem registre prfix
     Route::group([ 'prefix' => 'AP', 'middleware' => 'admin', 'namespace' => 'Ap' ], function(){
         Route::get('/', 'HomeController@index');
 
