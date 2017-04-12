@@ -26,7 +26,7 @@
         <div class="membre-block-form">
             <p class="text-beginning" style="text-align: center!important;">{!!  trans('membre.text-beginning') !!}</p>
 
-            <form method="post" class="membre-form" enctype="multipart/form-data">
+            <form method="post" class="membre-form" enctype="multipart/form-data" onsubmit="return checkSize(5242880)">
 
                 {{ csrf_field() }}
                 <p>{!!  trans('membre.name') !!}</p>
@@ -103,7 +103,7 @@
                         <img id="avatar" src="{{$item->getImage() ?: 'src/img/photo.png'}}">
                     </div>
                     <div class="file_upload">
-                        <input id="loader" type="file" name="image" value="{{$item->getImage() ?: ''}}" />
+                        <input id="loader" type="file" name="image" value="{{$item->getImage() ?: ''}}" max-size="6000"/>
                         <button type="button">{!!  trans('membre.upload') !!}</button>
                     </div>
                 </div>
@@ -118,6 +118,25 @@
                 <a href="#" go-prev class="membre-profile_buttom">{!!  trans('membre.exit') !!}</a>
                 <p>{!!  trans('membre.text-under-button') !!}</p>
             </form>
+
+            <script type="text/javascript">
+                function checkSize(max_img_size)
+                {
+                    var input = document.getElementById("loader");
+                    // check for browser support (may need to be modified)
+                    if(input.files && input.files.length == 1)
+                    {
+                        if (input.files[0].size > max_img_size)
+                        {
+                            alert("The file must be less than " + (max_img_size/1024/1024) + "MB");
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+            </script>
+
         </div>
     </div>
 </div>

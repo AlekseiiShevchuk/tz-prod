@@ -3,7 +3,6 @@
 </div>
 <div class="content-white">
     <div class="tzinfo">
-        <div class="tzinfo-block"
         <div class="tzinfo-block-text meditation-text">
             <div class="tzinfo-block-text_text">
 
