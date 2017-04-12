@@ -172,12 +172,10 @@ class SubscriptionController extends Controller
         $invite = $request->offsetGet('invite') == '1';
 
         try {
-
-            //            $cardinity->set3DPassTestCase(true);
+            //$cardinity->set3DPassTestCase(true);
 
             $currentPlan = $cardinity->getPlan((int)$id);
             $payment = $cardinity->createCardPayment($card, $currentPlan);
-
 
             if ($payment->isPending()) {
                 Session::set('cardinity_payment', $payment->serialize());
@@ -228,7 +226,6 @@ class SubscriptionController extends Controller
 
     public function processAuthorization(Request $request, Cardinity $cardinity)
     {
-
         $message = null;
         $identifier = $request->offsetGet('MD');
         $pares = $request->offsetGet('PaRes');
@@ -240,7 +237,9 @@ class SubscriptionController extends Controller
         $payment = new Payment\Payment();
 
         $payment->unserialize(Session::get('cardinity_payment'));
-        if ($payment->getOrderId() != $identifier || $pares != $payment->getDescription()) {
+        //dd([$request->all(), $payment]);
+
+        if ($payment->getOrderId() != $identifier /*|| $pares != $payment->getDescription()*/) {
             Session::flash('flash_message', 'Invalide de rappel de données');
             Session::flash('flash_message_type', 'error');
 
