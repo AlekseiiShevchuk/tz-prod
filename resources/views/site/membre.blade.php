@@ -103,7 +103,7 @@
                         <img id="avatar" src="{{$item->getImage() ?: 'src/img/photo.png'}}">
                     </div>
                     <div class="file_upload">
-                        <input id="loader" type="file" name="image" value="{{$item->getImage() ?: ''}}" max-size="6000"/>
+                        <input id="loader" type="file" name="image" value="{{$item->getImage() ?: ''}}"/>
                         <button type="button">{!!  trans('membre.upload') !!}</button>
                     </div>
                 </div>
