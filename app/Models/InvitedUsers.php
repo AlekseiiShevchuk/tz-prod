@@ -1,6 +1,6 @@
 <?php
 /**
- * Developer: Andrew Karpich
+ * Developer: Andrew Karpich and Aleksey Shevchuk shevchuka@gmail.com
  * Date: 15.03.2017 12:17
  */
 
