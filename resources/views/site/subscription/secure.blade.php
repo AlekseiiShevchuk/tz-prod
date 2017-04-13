@@ -1,17 +1,15 @@
 <div class="abonne-title">
-    Redirecting to credit card validation page
+    Nous attendons la validation de votre paiement.
 </div>
 <div class="content-white padding-to-footer">
     <div name="membre" class="membre">
         <div class="membre-block-form">
             <p>
-                If your browser does not start loading the page,
-                press the button below.
-                You will be sent back to this site after you
-                authorize the transaction.
+                Veuillez patienter quelques instants.
+                Si la confirmation ne s'affiche pas sur l'écran, merci de cliquer sur le bouton ci-dessous.
             </p>
             <form name="ThreeDForm" method="POST" action="{{ $auth->getUrl() }}" class="membre-form">
-                <input type="submit" class="button membre-profile_buttom" value="Click Here" style="margin-left: 28%;">
+                <input type="submit" class="button membre-profile_buttom" value="Poursuivre la procédure de paiement" style="margin-left: 28%;">
                 <input type="hidden" name="PaReq" value="{{ $auth->getData() }}"/>
                 <input type="hidden" name="TermUrl" value="{{ $callbackUrl }}"/>
                 <input type="hidden" name="MD" value="{{ $identifier }}"/>

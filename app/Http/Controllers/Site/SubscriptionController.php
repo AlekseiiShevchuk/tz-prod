@@ -189,7 +189,7 @@ class SubscriptionController extends Controller
             }
 
             if ($payment->isApproved()) {
-                Session::flash('flash_message', 'Succès');
+                Session::flash('flash_message', 'Votre paiement a été validé.');
                 self::successPayment($currentPlan, $payment, Auth::user(), $invite);
 
                 return redirect('abonne/subscription');
@@ -257,7 +257,7 @@ class SubscriptionController extends Controller
             }
 
             if ($payment->isApproved()) {
-                Session::flash('flash_message', 'Success');
+                Session::flash('flash_message', 'Votre paiement a été validé.');
 
                 self::successPayment($currentPlan, $payment, Auth::user(), $invite);
 
