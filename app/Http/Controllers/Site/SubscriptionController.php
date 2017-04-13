@@ -264,7 +264,7 @@ class SubscriptionController extends Controller
                 return redirect('abonne/subscription');
             }
         } catch (\Cardinity\Exception\Runtime $e) {
-            Session::flash('flash_message', '3D secure error');
+            Session::flash('flash_message', 'La carte que vous avez utilisé n\'a pas été acceptée par l\'institution financière.');
             Session::flash('flash_message_type', 'error');
 
             return redirect('abonne/details/' . $currentPlan->id);
