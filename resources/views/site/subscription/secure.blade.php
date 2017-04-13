@@ -9,7 +9,7 @@
                 Si la confirmation ne s'affiche pas sur l'écran, merci de cliquer sur le bouton ci-dessous.
             </p>
             <form name="ThreeDForm" method="POST" action="{{ $auth->getUrl() }}" class="membre-form">
-                <input type="submit" class="button membre-profile_buttom" value="Poursuivre la procédure de paiement" style="margin-left: 28%;">
+                <input type="submit" class="button membre-profile_buttom" value="RETOUR" style="margin-left: 28%;">
                 <input type="hidden" name="PaReq" value="{{ $auth->getData() }}"/>
                 <input type="hidden" name="TermUrl" value="{{ $callbackUrl }}"/>
                 <input type="hidden" name="MD" value="{{ $identifier }}"/>
