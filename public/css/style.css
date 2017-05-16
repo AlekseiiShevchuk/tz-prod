@@ -2441,3 +2441,7 @@ p.invite-title {
   padding: 5px 0;
   display: block;
 }
+
+.country > option {
+    color:black; !important;
+}

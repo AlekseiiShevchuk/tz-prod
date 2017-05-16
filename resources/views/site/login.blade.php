@@ -61,8 +61,14 @@
 
                 <label for="name">*</label>
 
-                {!! View::make('widgets.InputSelectCountries', ['country_id' => Cookie::get('country_id'), 'class' => 'country']) !!}
-                <!---->
+                @if ($errors->has('country_id'))
+                    <div class="help-block">
+                        <strong>{{ $errors->first('country_id') }}</strong>
+                    </div>
+                @endif
+                {!! View::make('widgets.InputSelectCountries', ['country_id' => Cookie::get('country_id') ?? App\Services\GeoIPService::getCountryIdForCurrentVisitor(), 'class' => 'country']) !!}
+                <label for="country_id">*</label>
+            <!---->
 
                 <div class="remember">
                     <label class="check-box">
