@@ -11,7 +11,9 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\ViewErrorBag;
 
@@ -20,7 +22,14 @@ class AuthController extends Controller
 
     public function showForm()
     {
-        return view('site.login');
+        $response = response()->view('site.login');
+
+        if (empty(Cookie::get('is_old_visitor'))) {
+            $response->withCookie(cookie('is_old_visitor', 'yes', 10000000));
+        }
+
+        return $response;
+        //return view('site.login');
     }
 
     public function loginOrRegistration(Request $request)
@@ -30,7 +39,7 @@ class AuthController extends Controller
          */
 
         $this->validate($request, [
-            'login'    => 'required|max:255',
+            'login' => 'required|max:255',
             'password' => 'required|min:6',
         ]);
 
@@ -108,11 +117,12 @@ class AuthController extends Controller
         ]);
     }
 
-    public function emailValidation(Request $request, $id, $code){
+    public function emailValidation(Request $request, $id, $code)
+    {
 
-        $user = User::where('id', (int) $id)->first();
+        $user = User::where('id', (int)$id)->first();
 
-        if(trim($code) != '' && $user && $user->email_token == $code ){
+        if (trim($code) != '' && $user && $user->email_token == $code) {
 
             $user->is_email_valid = 1;
 

@@ -24,5 +24,10 @@ return [
 <p>Si ceci est votre première visite, entrez le mot de passe de votre choix.</p>
 <p>Aucune autre information n’est nécessaire pour accéder à Turbulence Zéro, mais nous vous encourageons vivement à compléter votre profil 
 dès que vous aurez un moment.</p>
-</p>'
+</p>',
+    'text-top_first_time_visitor' => '<p><strong>Accès gratuit aux séries découvertes !</strong></p><br>
+Remplissez les informations ci-dessous, choisissez un mot de passe et validez.
+Nous vous enverrons un email pour confirmer votre adresse.
+Vous accéderez immédiatement aux séries de méditation.',
+    'text-top_old_visitor' => '<p><strong>Vérifiez ou remplissez les informations ci-dessous pour vous connecter.</strong></p>',
 ];

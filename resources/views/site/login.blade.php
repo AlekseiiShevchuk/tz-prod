@@ -5,7 +5,11 @@
     <div name="membre" class="membre">
         <div class="membre-block-form">
             <div class="text-abone-top">
-                {!!  trans('login.text-top') !!}
+                @if(empty(Cookie::get('is_old_visitor')))
+                    {!!  trans('login.text-top_first_time_visitor') !!}
+                @else
+                {!!  trans('login.text-top_old_visitor') !!}
+                @endif
             </div>
             <p></p>
             <form action="" method="post" role="form" class="membre-form crop" action="{{ url('/login') }}">
@@ -39,6 +43,26 @@
                        oninvalid="this.setCustomValidity('Remplissez le champ')"
                        oninput="setCustomValidity('')"/>
                 <label for="password">*</label>
+                <!---->
+                @if ($errors->has('name'))
+                    <div class="help-block">
+                        <strong>{{ $errors->first('name') }}</strong>
+                    </div>
+                @endif
+
+                <input type="text"
+                       id="name"
+                       placeholder="Prénom"
+                       name="name"
+                       required
+                       {{--oninvalid="this.setCustomValidity('Remplissez le champ')"--}}
+                       {{--oninput="setCustomValidity('')"--}}
+                       value="<?php echo Cookie::get('name') ?? request()->old('name'); ?>"/>
+
+                <label for="name">*</label>
+
+                {!! View::make('widgets.InputSelectCountries', ['country_id' => Cookie::get('country_id'), 'class' => 'country']) !!}
+                <!---->
 
                 <div class="remember">
                     <label class="check-box">
