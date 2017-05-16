@@ -8,6 +8,7 @@ namespace App\Http\Controllers\Auth;
 
 
 use App\Http\Controllers\Controller;
+use App\Services\GeoIPService;
 use App\User;
 use Google_Client;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -77,6 +78,7 @@ class GoogleController extends Controller {
                         'email'    => $email,
                         'aid'      => $_COOKIE['aid'] ?? 0,
                         'image'    => $image,
+                        'country_id'    => Cookie::get('country_id') ?? GeoIPService::getCountryIdForCurrentVisitor(),
                     ]);
                 }
 

@@ -31,6 +31,7 @@ class CheckIfEmailConfirmed
 
             return redirect('/membre');
         }
+
         return $next($request);
     }
 }

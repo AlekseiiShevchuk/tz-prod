@@ -8,6 +8,7 @@ namespace App\Http\Controllers\Site;
 
 
 use App\Http\Controllers\Controller;
+use App\Services\GeoIPService;
 use App\User;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
@@ -28,8 +29,11 @@ class AuthController extends Controller
             $response->withCookie(cookie('is_old_visitor', 'yes', 10000000));
         }
 
+        if (empty(Cookie::get('country_id'))) {
+            $response->withCookie(cookie('country_id', GeoIPService::getCountryIdForCurrentVisitor(), 10000000));
+        }
+
         return $response;
-        //return view('site.login');
     }
 
     public function loginOrRegistration(Request $request)
@@ -90,7 +94,9 @@ class AuthController extends Controller
 
                     $registerResponse = $registerController->register($request);
 
-                    return $registerResponse;
+                    return $registerResponse
+                        ->withCookie(cookie('country_id', $request->get('country_id'), 10000000))
+                        ->withCookie(cookie('name', $request->get('name'), 10000000));
                 }
             }
         }
