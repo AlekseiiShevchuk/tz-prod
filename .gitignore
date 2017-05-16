@@ -10,4 +10,3 @@ Homestead.yaml
 /.vagrant
 /public/npm-debug.log
 /public/bower_components/
-/composer.lock
