@@ -21,9 +21,6 @@
     {{--<link href="/css/app.css" rel="stylesheet">--}}
     {{--<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>--}}
     <script src="/js/app.js"></script>
-@if(request()->route()->getPath() == 'library')
-    <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=591b1918ba33c30011148e89&product=sticky-share-buttons' async='async'></script>
-@endif
 </head>
 <body @if (isset($blue_style) && $blue_style )class="blue-style" @endif itemscope itemtype="http://schema.org/WebSite">
 
