@@ -14,7 +14,9 @@
             <p></p>
             <form action="" method="post" role="form" class="membre-form crop" action="{{ url('/login') }}">
                 {{ csrf_field() }}
+<div class="row">
 
+</div>
                 @if ($errors->has('login'))
                     <div class="help-block">
                         <strong>{{ $errors->first('login') }}</strong>
@@ -43,7 +45,7 @@
                        oninvalid="this.setCustomValidity('Remplissez le champ')"
                        oninput="setCustomValidity('')"/>
                 <label for="password">*</label>
-                <!---->
+
                 @if ($errors->has('name'))
                     <div class="help-block">
                         <strong>{{ $errors->first('name') }}</strong>
@@ -68,7 +70,7 @@
                 @endif
                 {!! View::make('widgets.InputSelectCountries', ['country_id' => Cookie::get('country_id') ?? App\Services\GeoIPService::getCountryIdForCurrentVisitor(), 'class' => 'country']) !!}
                 <label for="country_id">*</label>
-            <!---->
+
 
                 <div class="remember">
                     <label class="check-box">
@@ -78,7 +80,7 @@
 
                 <input type="submit" class="button" value="{!! trans('login.login_reg') !!}"/>
 
-                <p class="membre-text" style="text-align: center!important;">
+                <p class="membre-text" style="text-align: center!important; margin-top: -30px;">
                     <a href="{{ url('/password/reset') }}">{!! trans('login.forgot_password') !!}</a>
                 </p>
 
