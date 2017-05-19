@@ -26,8 +26,8 @@ return [
 dès que vous aurez un moment.</p>
 </p>',
     'text-top_first_time_visitor' => '<p><strong>Accès gratuit aux séries découvertes !</strong></p><br>
-Remplissez les informations ci-dessous, choisissez un mot de passe et validez.
-Nous vous enverrons un email pour confirmer votre adresse.
+Remplissez les informations ci-dessous, choisissez un mot de passe et validez.<br>
+Nous vous enverrons un email pour confirmer votre adresse.<br>
 Vous accéderez immédiatement aux séries de méditation.',
     'text-top_old_visitor' => '<p><strong>Vérifiez ou remplissez les informations ci-dessous pour vous connecter.</strong></p>',
 ];
