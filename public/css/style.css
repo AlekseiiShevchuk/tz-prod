@@ -776,7 +776,8 @@ p.block-buy_time {
 
     background-image: url("../src/img/replay-hover.png");
     background-size: cover;
-    margin-left: 6px;
+    /*margin-left: 6px;*/
+    margin-left: 0;
 }
 
 .blocked .group_name-play + .group_name-replay {
@@ -2445,4 +2446,82 @@ p.invite-title {
 
 .country > option {
     color:black; !important;
+}
+
+/* Modals */
+.modal {
+  display: none;
+}
+.modal__container {
+  position: relative;
+  max-width: 550px;
+}
+.modal__content {
+  background-color: #ffffff;
+}
+.modal__header {
+  border-bottom: 1px solid;
+  margin-bottom: 20px;
+  color: #9a9a9a;
+}
+.modal__title {
+  font-size: 18px;
+  font-family: LatoBold;
+}
+.modal__text {
+  font-size: 16px;
+  font-family: LatoReg;
+  line-height: 1.5;
+  color: #9a9a9a;
+  margin-bottom: 2px;
+}
+
+.share-by-email {
+  margin-top: 20px;
+}
+.share-by-email .share-by-email__input {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+.share-by-email .share-by-email__btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+.share-by-email .share-by-email__submit {
+  height: 40px;
+  background: #4e69b0;
+  color: white;
+  font-size: 14px;
+  font-family: LatoBold;
+  text-transform: uppercase;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  display: block;
+  width: 48%;
+}
+.icon-share-by-email {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-top: -5px;
+  background-image: url(../src/img/share.png);
+  background-size: cover;
+  margin-left: 0;
+  opacity: 0.2;
+}
+.icon-share-by-email:hover {
+  opacity: 0.1;
+}
+.modal__msg {
+  margin-top: 20px;
+}
+.modal__msg--success {
+  color: green;
+}
+.modal__msg--error {
+  color: red;
 }
