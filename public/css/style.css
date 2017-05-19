@@ -2538,6 +2538,9 @@ p.invite-title {
   text-align: center;
 line-height: 40px;
 }
+.share-by-email__input--error {
+  border-color: red !important;
+}
 .icon-share-by-email {
   width: 30px;
   height: 30px;
@@ -2551,12 +2554,16 @@ line-height: 40px;
 .icon-share-by-email:hover {
   opacity: 0.1;
 }
-.modal__msg {
+/*.modal__msg {
   margin-top: 20px;
-}
+}*/
 .modal__msg--success {
+  display: block;
+  margin-top: 20px;
   color: green;
 }
 .modal__msg--error {
+  display: block;
+  margin-top: 20px;
   color: red;
 }
