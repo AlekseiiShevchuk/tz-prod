@@ -101,7 +101,10 @@ class AuthController extends Controller
             }
         }
 
-        return $loginResponse;
+        return $loginResponse
+            ->withCookie(cookie('country_id', $request->get('country_id'), 10000000))
+            ->withCookie(cookie('name', $request->get('name'), 10000000))
+            ;
     }
 
     public function loginByNickname(Request $request)
@@ -109,7 +112,9 @@ class AuthController extends Controller
         $loginResponse = Auth::attempt($request->only('nickname', 'password'), $request->has('remember'));
 
         if ($loginResponse) {
-            return redirect('/library');
+            return redirect('/library')
+                ->withCookie(cookie('country_id', $request->get('country_id'), 10000000))
+                ->withCookie(cookie('name', $request->get('name'), 10000000));
         }
 
         if (User::whereNickname($request->get('nickname'))->count() > 0) {

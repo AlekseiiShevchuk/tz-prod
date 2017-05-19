@@ -60,7 +60,7 @@
                 <a href="{{ env('APP_URL') }}/contacts">{!!  trans('main.menu.contacts') !!}</a>
             </li>
             <li>
-                <a class="footer_soc-net">
+                <div class="footer_soc-net">
                     <a href="https://plus.google.com/share?url={{env('APP_URL')}}?hl={{App::getLocale()}}&text=La méditation est un exercice, rien d’autre.
 Venez découvrir gratuitement la façon la plus facile d’appréhender la méditation, sans gourou ni cours, tout simplement avec Turbulence Zéro.  Nous vous proposons des séries d’exercices pratiques et de partager avec nous votre expérience.
 ">
@@ -71,7 +71,6 @@ Venez découvrir gratuitement la façon la plus facile d’appréhender la médi
 ">
                         <img src="/src/img/facebook2.png">
                     </a>
-                    {{--<a href="#"><img src="src/img/twit.png"></a>--}}
                 </div>
             </li>
         </ul>
