@@ -1,3 +1,11 @@
+{{-- Пример формы для отправки приглашения
+<form action="share-by-email" method="post" role="form" class="membre-form crop">
+    {{ csrf_field() }}
+    <input type="email" name="email">
+    <input type="submit" class="button" value="button text"/>
+</form>
+--}}
+
 <div class="abonne-title">
     {!!  trans('library.title') !!}
 </div>

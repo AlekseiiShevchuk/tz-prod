@@ -55,6 +55,8 @@ Route::group([ 'middleware' => 'trailing_slashes' ], function(){
         });
     });
 
+    Route::post('share-by-email', 'Site\ShareController@sendShareEmailAjax')->middleware('auth')->name('share.by.email');
+
     Route::group([ 'prefix' => 'ap', 'middleware' => 'admin', 'namespace' => 'Ap' ], function(){
         Route::get('/', 'HomeController@index');
 
