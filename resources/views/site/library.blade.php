@@ -1,79 +1,3 @@
-<div class="modal" id="share-by-email-popup">
-			<div class="modal__container">
-				<div class="modal__content">
-					<div class="modal__header">
-						<h2 class="modal__title">AJOUTER UNE AUTRE PERSONNE - ENVOYER</h2>
-					</div>
-					<div class="modal__body">
-            <p class="modal__text">Entrez l’adresse email de la personne avec qui vous voulez partager votre expérience. </p>
-            <p class="modal__text">RECIPIENT EMAIL BOX</p>
-            <p class="modal__text">
-              AJOUTER UNE AUTRE PERSONNE - ENVOYER (buttons text) <br>
-              - If they click on AJOUTER UNE...it sends out the mail to the first recipient, and propose the same RECIPIENT EMAIL BOX again for them to add one more person.<br>
-              - If they click on PARTAGER, it sends out the email and closes the pop up.<br>
-            </p>
-            </p>
-            <form method="post" id="post-form-share" class="membre-form crop share-by-email" role="form">
-                {{ csrf_field() }}
-                <input type="email" name="email" class="share-by-email__input" id="share-by-email__input">
-                <div class="share-by-email__btn-group">
-                  <input class="share-by-email__submit" type="submit" id="btn-1" value="PARTAGER"/>
-                  <input class="share-by-email__submit" type="submit" id="btn-2" value="AJOUTER UNE"/>
-                </div>
-            </form>
-            <div class="modal__msg"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script type="text/javascript">
-    // $(document).on('submit', '#post-form-share', function(e) {
-    //   e.preventDefault();
-    //   var $form = $(this);
-    //   console.log(this);
-    //   $.ajax({
-    //     url: "share-by-email",
-    //     method : "POST",
-    //     data:  $form.serialize(),
-    //     success: function (data) {
-    //       console.log(data);
-    //       $(".modal__msg").html("<span class='modal__msg--success'>Nous avons envoyé votre invitation. <br> Merci pour votre partage.</span>");
-    //     },
-    //     error: function(xhr, ajaxOptions, thrownError) {
-    //       console.log('xhr.status: ' + xhr.status);
-    //       console.log('thrownError: ' + thrownError);
-    //       $(".modal__msg").html("<span class='modal__msg--error''>Nous n’avons pas pu envoyer votre invitation. <br> Veuillez vérifier les informations et essayer une nouvelle fois.</span>");
-    //     }
-    //   });
-    // });
-
-    $(document).on('click', '#btn-1', function(e) {
-      e.preventDefault();
-      var email = $('#share-by-email__input');
-      // var data = {
-      //   token: $('input[name="_token"]').val(),
-      //   email: e.target.email.value,
-      // };
-      console.log('email: ' + email.val());
-
-      // $.ajax({
-      //   url: "share-by-email",
-      //   method : "POST",
-      //   data:  $form.serialize(),
-      //   success: function (data) {
-      //     console.log(data);
-      //     $(".modal__msg").html("<span class='modal__msg--success'>Nous avons envoyé votre invitation. <br> Merci pour votre partage.</span>");
-      //   },
-      //   error: function(xhr, ajaxOptions, thrownError) {
-      //     console.log('xhr.status: ' + xhr.status);
-      //     console.log('thrownError: ' + thrownError);
-      //     $(".modal__msg").html("<span class='modal__msg--error''>Nous n’avons pas pu envoyer votre invitation. <br> Veuillez vérifier les informations et essayer une nouvelle fois.</span>");
-      //   }
-      // });
-    })
-    </script>
-
 <div class="abonne-title">
     {!!  trans('library.title') !!}
 </div>
@@ -128,7 +52,7 @@
                                                                        class="group_name-play ms-play" audio="true"
                                                                        audio-name="{{ $sound->title }}"></a>
                                                                     <a href="#" class="group_name-replay"></a>
-                                                                    <a href="#" class="icon-share-by-email" popup='share-by-email'></a>
+                                                                    <a href="#" class="icon-share-by-email" onclick="openModalShare()"></a>
                                                                 </div>
                                                             @else
                                                                 <div class="group_name-controls blocked">

@@ -2450,13 +2450,36 @@ p.invite-title {
 
 /* Modals */
 .modal {
-  display: none;
+  position: fixed;
+ z-index: 10000;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ display: none;
+ overflow: hidden;
+ outline: none;
+ background-color: rgba(0, 0, 0, 0.5);
+}
+.modal.is-open {
+  display: block;
+}
+.modal__close {
+  float: right;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  font-family: LatoBold;
+  font-size: 16px;
 }
 .modal__container {
   position: relative;
   max-width: 550px;
+  margin: 30px auto;
 }
 .modal__content {
+  padding: 35px 45px;
   background-color: #ffffff;
 }
 .modal__header {
@@ -2474,6 +2497,15 @@ p.invite-title {
   line-height: 1.5;
   color: #9a9a9a;
   margin-bottom: 2px;
+}
+.modal--open {
+  overflow: hidden;
+  padding-right: 17px;
+}
+.modal--open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .share-by-email {
@@ -2502,6 +2534,8 @@ p.invite-title {
   -webkit-appearance: none;
   display: block;
   width: 48%;
+  text-align: center;
+line-height: 40px;
 }
 .icon-share-by-email {
   width: 30px;

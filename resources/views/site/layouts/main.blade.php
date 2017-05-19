@@ -20,6 +20,7 @@
     <link href="/css/fonts.css" rel="stylesheet">
     {{--<link href="/css/app.css" rel="stylesheet">--}}
     {{--<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>--}}
+    <script type="text/javascript" src="{{ url('/bower_components/jquery/dist/jquery.min.js') }}"></script>
     <script src="/js/app.js"></script>
 </head>
 <body @if (isset($blue_style) && $blue_style )class="blue-style" @endif itemscope itemtype="http://schema.org/WebSite">
@@ -146,6 +147,10 @@ Venez découvrir gratuitement la façon la plus facile d’appréhender la médi
 @include('site.popups.privee')
 
 @include('site.popups.tanks')
+
+@include('site.popups.share-email')
+
+
 <!-- Start of StatCounter Code for Default Guide -->
 <script type="text/javascript">
     var sc_project=11319960;
