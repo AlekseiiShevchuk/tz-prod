@@ -2,20 +2,14 @@
 			<div class="modal__container">
 				<div class="modal__content">
 					<div class="modal__header">
-						<h2 class="modal__title">AJOUTER UNE AUTRE PERSONNE - ENVOYER</h2>
+						<h2 class="modal__title">Entrez l’adresse email de la personne avec qui vous voulez partager votre expérience.</h2>
 					</div>
 					<div class="modal__body">
-            <p class="modal__text">Entrez l’adresse email de la personne avec qui vous voulez partager votre expérience. </p>
-            <p class="modal__text">RECIPIENT EMAIL BOX</p>
-            <p class="modal__text">
-              AJOUTER UNE AUTRE PERSONNE - ENVOYER (buttons text) <br>
-              - If they click on AJOUTER UNE...it sends out the mail to the first recipient, and propose the same RECIPIENT EMAIL BOX again for them to add one more person.<br>
-              - If they click on PARTAGER, it sends out the email and closes the pop up.<br>
-            </p>
-            </p>
+            <p class="modal__text"> </p>
+
             <form method="post" id="post-form-share" class="membre-form crop share-by-email" role="form">
                 {{ csrf_field() }}
-                <input type="email" name="email" class="share-by-email__input" id="share-by-email__input">
+                <input title="send email" type="email" name="email" class="share-by-email__input" id="share-by-email__input">
                 <div class="share-by-email__btn-group">
                   <input class="share-by-email__submit" type="submit" id="btn-1" value="PARTAGER"/>
                   <input class="share-by-email__submit" type="submit" id="btn-2" value="AJOUTER UNE"/>
@@ -50,12 +44,12 @@
 
     $(document).on('click', '#btn-1', function(e) {
       e.preventDefault();
-      var email = $('#share-by-email__input');
+      var email_input = document.getElementById('share-by-email__input').value;
       // var data = {
       //   token: $('input[name="_token"]').val(),
       //   email: e.target.email.value,
       // };
-      console.log('email: ' + email.val());
+      console.log('email: ' + email_input);
 
       // $.ajax({
       //   url: "share-by-email",
