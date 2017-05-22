@@ -3,12 +3,28 @@
 				<div class="modal__content">
 					<div class="modal__header">
             <button type="button" class="modal__close" onclick="closeModalShare()">X</button>
-						<h2 class="modal__title">Entrez l’adresse email de la personne avec qui vous voulez partager votre expérience.</h2>
+						<h2 class="modal__title">popup title</h2>
 					</div>
 					<div class="modal__body">
+                        <div class="footer_soc-net">
+                            <span>Social sharing:</span>
+
+                            {{--<a href="https://plus.google.com/share?url={{env('APP_URL')}}?hl={{App::getLocale()}}&text=La méditation est un exercice, rien d’autre.--}}
+{{--Venez découvrir gratuitement la façon la plus facile d’appréhender la méditation, sans gourou ni cours, tout simplement avec Turbulence Zéro.  Nous vous proposons des séries d’exercices pratiques et de partager avec nous votre expérience.">--}}
+                                {{--<img src="/src/img/gog.png" alt="Share on Google+"/>--}}
+                            {{--</a>--}}
+                            {{--<a href="http://www.facebook.com/sharer/sharer.php?u={{env('APP_URL')}}&text=La méditation est un exercice, rien d’autre.--}}
+{{--Venez découvrir gratuitement la façon la plus facile d’appréhender la méditation, sans gourou ni cours, tout simplement avec Turbulence Zéro.  Nous vous proposons des séries d’exercices pratiques et de partager avec nous votre expérience.">--}}
+                                {{--<img src="/src/img/facebook2.png">--}}
+                            {{--</a>--}}
+                        </div>
+
+
+
+
             <form method="post" id="post-form-share" class="membre-form crop share-by-email" role="form">
                 {{ csrf_field() }}
-                <input type="email" name="email" class="share-by-email__input" id="share-email" required="required">
+                <input type="email" name="email" class="share-by-email__input" id="share-email" required="required" placeholder="placeholder">
                 <div class="share-by-email__btn-group">
                   <input class="share-by-email__submit" type="submit" id="btn-1" value="PARTAGER"/>
 									<!-- <div class="share-by-email__submit" id="btn-1">PARTAGER</div> -->
