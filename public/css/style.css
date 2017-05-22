@@ -2534,9 +2534,26 @@ p.invite-title {
   cursor: pointer;
   -webkit-appearance: none;
   display: block;
-  width: 48%;
+  width: 59%;
   text-align: center;
 line-height: 40px;
+}
+
+.share-by-email .share-by-email__submit2 {
+    height: 40px;
+    background: #4e69b0;
+    color: white;
+    font-size: 14px;
+    font-family: LatoBold;
+    text-transform: uppercase;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    display: block;
+    width: 39%;
+    text-align: center;
+    line-height: 40px;
 }
 .share-by-email__input--error {
   border-color: red !important;

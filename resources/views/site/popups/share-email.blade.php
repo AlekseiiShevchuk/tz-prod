@@ -27,7 +27,7 @@ Venez découvrir gratuitement la façon la plus facile d’appréhender la médi
                 <input type="email" name="email" class="share-by-email__input" id="share-email" required="required" placeholder="Entrez l’adresse email de la personne que vous voulez inviter.">
                 <div class="share-by-email__btn-group">
                   <input class="share-by-email__submit" type="submit" id="btn-2" value="AJOUTER UNE AUTRE PERSONNE"/>
-                  <input class="share-by-email__submit" type="submit" id="btn-1" value="ENVOYER"/>
+                  <input class="share-by-email__submit2" type="submit" id="btn-1" value="ENVOYER"/>
                 </div>
                 <!-- <div class="share-by-email__btn-group"><div class='share-by-email__submit' onClick='closePopup()'>Close</div><div class='share-by-email__submit'>Send</div></div> -->
             </form>
