@@ -3,7 +3,7 @@
 				<div class="modal__content">
 					<div class="modal__header">
             <button type="button" class="modal__close" onclick="closeModalShare()">X</button>
-						<h2 class="modal__title">popup title</h2>
+						<h2 class="modal__title">Partagez votre découverte.</h2>
 					</div>
 					<div class="modal__body">
                         <div class="footer_soc-net">
@@ -24,11 +24,10 @@ Venez découvrir gratuitement la façon la plus facile d’appréhender la médi
 
             <form method="post" id="post-form-share" class="membre-form crop share-by-email" role="form">
                 {{ csrf_field() }}
-                <input type="email" name="email" class="share-by-email__input" id="share-email" required="required" placeholder="placeholder">
+                <input type="email" name="email" class="share-by-email__input" id="share-email" required="required" placeholder="Entrez l’adresse email de la personne que vous voulez inviter.">
                 <div class="share-by-email__btn-group">
-                  <input class="share-by-email__submit" type="submit" id="btn-1" value="PARTAGER"/>
-									<!-- <div class="share-by-email__submit" id="btn-1">PARTAGER</div> -->
-                  <input class="share-by-email__submit" type="submit" id="btn-2" value="AJOUTER UNE"/>
+                  <input class="share-by-email__submit" type="submit" id="btn-2" value="AJOUTER UNE AUTRE PERSONNE"/>
+                  <input class="share-by-email__submit" type="submit" id="btn-1" value="ENVOYER"/>
                 </div>
                 <!-- <div class="share-by-email__btn-group"><div class='share-by-email__submit' onClick='closePopup()'>Close</div><div class='share-by-email__submit'>Send</div></div> -->
             </form>
