@@ -9,14 +9,14 @@
                         <div class="footer_soc-net">
                             <span>Social sharing:</span>
 
-                            {{--<a href="https://plus.google.com/share?url={{env('APP_URL')}}?hl={{App::getLocale()}}&text=La méditation est un exercice, rien d’autre.--}}
-{{--Venez découvrir gratuitement la façon la plus facile d’appréhender la méditation, sans gourou ni cours, tout simplement avec Turbulence Zéro.  Nous vous proposons des séries d’exercices pratiques et de partager avec nous votre expérience.">--}}
-                                {{--<img src="/src/img/gog.png" alt="Share on Google+"/>--}}
-                            {{--</a>--}}
-                            {{--<a href="http://www.facebook.com/sharer/sharer.php?u={{env('APP_URL')}}&text=La méditation est un exercice, rien d’autre.--}}
-{{--Venez découvrir gratuitement la façon la plus facile d’appréhender la méditation, sans gourou ni cours, tout simplement avec Turbulence Zéro.  Nous vous proposons des séries d’exercices pratiques et de partager avec nous votre expérience.">--}}
-                                {{--<img src="/src/img/facebook2.png">--}}
-                            {{--</a>--}}
+                            <a href="https://plus.google.com/share?url={{env('APP_URL')}}?hl={{App::getLocale()}}&text=La méditation est un exercice, rien d’autre.
+Venez découvrir gratuitement la façon la plus facile d’appréhender la méditation, sans gourou ni cours, tout simplement avec Turbulence Zéro.  Nous vous proposons des séries d’exercices pratiques et de partager avec nous votre expérience.">
+                                <img src="/src/img/gog.png" alt="Share on Google+"/>
+                            </a>
+                            <a href="http://www.facebook.com/sharer/sharer.php?u={{env('APP_URL')}}&text=La méditation est un exercice, rien d’autre.
+Venez découvrir gratuitement la façon la plus facile d’appréhender la méditation, sans gourou ni cours, tout simplement avec Turbulence Zéro.  Nous vous proposons des séries d’exercices pratiques et de partager avec nous votre expérience.">
+                                <img src="/src/img/facebook2.png">
+                            </a>
                         </div>
 
 
