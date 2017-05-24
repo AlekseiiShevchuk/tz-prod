@@ -26,7 +26,7 @@
                     @endif
 
                     <p style="width: 283px;margin-left: 22%;">{!! trans('reset.enter_email') !!}</p>
-
+<input type="hidden" name="email" value="{{$email}}">
                     <input type="text"
                            id="e-mail"
                            placeholder="{!!  trans('reset.email') !!}"

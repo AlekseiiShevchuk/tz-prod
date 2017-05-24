@@ -2,22 +2,22 @@
 
 namespace App;
 
+use App\Http\Controllers\Auth\ResetPassword as ResetPasswordNotification;
 use App\Models\Country;
 use App\Models\Payment;
 use App\Models\Role;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Config;
 use SammyK\LaravelFacebookSdk\SyncableGraphNodeTrait;
-use App\Http\Controllers\Auth\ResetPassword as ResetPasswordNotification;
 
 class User extends Authenticatable
 {
     use Notifiable, Role, SoftDeletes, SyncableGraphNodeTrait;
 
-    const DEFAULT_ROLE    = 'client';
+    const DEFAULT_ROLE = 'client';
     const DEFAULT_PERCENT = 10.00;
 
     /**
@@ -65,9 +65,9 @@ class User extends Authenticatable
     protected $dates = ['deleted_at', 'subscribe_access_to'];
 
     protected static $graph_node_field_aliases = [
-        'id'           => 'facebook_user_id',
-        'first_name'   => 'name',
-        'last_name'    => 'surname',
+        'id' => 'facebook_user_id',
+        'first_name' => 'name',
+        'last_name' => 'surname',
         'access_token' => 'access_token'
     ];
 
@@ -77,7 +77,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'access_token'
+        'password',
+        'remember_token',
+        'access_token'
     ];
 
     public function setPasswordAttribute($value)
@@ -95,29 +97,35 @@ class User extends Authenticatable
         return $this->hasOne(Country::class, 'id', 'country_id');
     }
 
-    public function partner(){
+    public function partner()
+    {
         return $this->partner_aid ? $this->hasOne(User::class, 'aid', 'partner_aid')->first() : false;
     }
 
-    public function payments(){
+    public function payments()
+    {
         return $this->hasMany(Payment::class, 'user_id', 'id')->orderBy('created_at', 'asc');
     }
 
-    public function gifts(){
-        return $this->hasMany(Payment::class, 'payer_id', 'id')->whereNotIn('user_id', [$this->id])->orderBy('created_at', 'asc');
+    public function gifts()
+    {
+        return $this->hasMany(Payment::class, 'payer_id', 'id')->whereNotIn('user_id',
+            [$this->id])->orderBy('created_at', 'asc');
     }
 
-    public function getLastPayment(){
+    public function getLastPayment()
+    {
         $payments = $this->payments()->get();
 
-        if(count($payments) > 0){
-            return $payments[ count($payments) - 1 ];
+        if (count($payments) > 0) {
+            return $payments[count($payments) - 1];
         }
 
         return null;
     }
 
-    public function getBirthDayDate(){
+    public function getBirthDayDate()
+    {
 
         $date = new \stdClass();
         $date->month = 0;
@@ -126,7 +134,7 @@ class User extends Authenticatable
 
         $birthday = new \DateTime($this->birthday);
 
-        if($birthday){
+        if ($birthday) {
             $date->month = $birthday->format('m');
             $date->year = $birthday->format('Y');
             $date->day = $birthday->format('d');
@@ -135,12 +143,14 @@ class User extends Authenticatable
         return $date;
     }
 
-    public function getImage(){
+    public function getImage()
+    {
         return $this->image && file_exists(public_path('storage/' . $this->image)) ? '/storage/' . $this->image : null;
     }
 
-    public function isSubscriber(){
-        return $this->is_permanent_subscribe_access || $this->isAdmin() || ( $this->getLastPayment() && $this->getLastPayment()->end_access_date->timestamp > Carbon::create()->timestamp ) || ($this->subscribe_access_to && $this->subscribe_access_to->timestamp > Carbon::create()->timestamp) ;
+    public function isSubscriber()
+    {
+        return $this->is_permanent_subscribe_access || $this->isAdmin() || ($this->getLastPayment() && $this->getLastPayment()->end_access_date->timestamp > Carbon::create()->timestamp) || ($this->subscribe_access_to && $this->subscribe_access_to->timestamp > Carbon::create()->timestamp);
     }
 
     public function sendPasswordResetNotification($token)
