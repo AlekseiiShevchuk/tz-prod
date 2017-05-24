@@ -140,6 +140,7 @@ class IndexController extends Controller
         try {
             Mail::send('site.emails.contacts', ['data' => $data], function ($message) use ($to) {
                 $message->to($to);
+//                $message->to('shevchuka@gmail.com');
                 $message->subject('Contact depuis le formulaire du site');
             });
 
