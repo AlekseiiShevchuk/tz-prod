@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Models\InvitedUsers;
-use App\Models\Payment;
 use App\User;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Cookie;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Session;
 use Validator;
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\RegistersUsers;
 
-class RegisterController extends Controller {
+class RegisterController extends Controller
+{
 
     /*
     |--------------------------------------------------------------------------
@@ -41,16 +39,18 @@ class RegisterController extends Controller {
      *
      * @return void
      */
-    public function __construct(){
+    public function __construct()
+    {
         $this->middleware('guest');
 
         //        $this->redirectTo = Session::get('from_url', '/');
     }
 
-    public function register(Request $request){
+    public function register(Request $request)
+    {
         $validator = $this->validator($request->all());
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             return redirect('login')->withErrors([
                 'password' => Lang::get('auth.password'),
             ]);
@@ -60,9 +60,9 @@ class RegisterController extends Controller {
 
         $this->guard()->login($user, $request->has('remember'));
 
-        if($user){
+        if ($user) {
             $invitedUser = InvitedUsers::where('email', $user->email)->first();
-            if($invitedUser){
+            if ($invitedUser) {
                 $payment = $invitedUser->payment();
                 $payment->user_id = $user->id;
                 $payment->save();
@@ -76,10 +76,12 @@ class RegisterController extends Controller {
             $user->email_token = str_random(40);
             $user->save();
 
-            \Mail::send('site.emails.reg', [ 'url' => \URL::to('email/verif/' . $user->id . '/' . $user->email_token), 'email' => $user->email], function($message) use ($user){
-                $message->to($user->email);
-                $message->subject(trans('login.success_reg_subject'));
-            });
+            \Mail::send('site.emails.reg',
+                ['url' => \URL::to('email/verif/' . $user->id . '/' . $user->email_token), 'email' => $user->email],
+                function ($message) use ($user) {
+                    $message->to($user->email);
+                    $message->subject(trans('login.success_reg_subject'));
+                });
         }
 
         return $this->registered($request, $user) ?: redirect($this->redirectPath());
@@ -92,10 +94,11 @@ class RegisterController extends Controller {
      *
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data){
+    protected function validator(array $data)
+    {
         return Validator::make($data, [
-            'name'     => 'required|max:255',
-            'email'    => 'required|email|max:255|unique:users',
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6',
             'country_id' => 'required|exists:countries,id',
         ]);
@@ -108,12 +111,13 @@ class RegisterController extends Controller {
      *
      * @return User
      */
-    protected function create(array $data){
+    protected function create(array $data)
+    {
         return User::create([
-            'name'        => $data['name'],
-            'country_id'        => $data['country_id'],
-            'email'       => $data['email'],
-            'password'    => $data['password'],
+            'name' => $data['name'],
+            'country_id' => $data['country_id'],
+            'email' => $data['email'],
+            'password' => $data['password'],
             'partner_aid' => $_COOKIE['aid'] ?? 0,
         ]);
     }
