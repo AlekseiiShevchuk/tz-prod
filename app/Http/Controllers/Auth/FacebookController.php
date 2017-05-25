@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Services\GeoIPService;
 use App\User;
 use Facebook\Exceptions\FacebookResponseException;
 use Facebook\Exceptions\FacebookSDKException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use League\Flysystem\Exception;
@@ -129,6 +131,7 @@ class FacebookController extends Controller
                         }
                         $user->image = $image;
                     }
+                    $user->country_id = Cookie::get('country_id') ?? GeoIPService::getCountryIdForCurrentVisitor();
                     $user->save();
                 }
             }
