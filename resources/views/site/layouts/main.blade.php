@@ -9,7 +9,7 @@
         <meta property="og:title"     content="{{ strip_tags(trans('info.title')) }}" />
     @endif
     <meta property="og:description"   content="{{ strip_tags(trans('index.carousel-block_text-1')) }}" />
-    <meta property="og:image"         content="{{ env('APP_URL') }}/src/img/TZ_FacebookImage500x500_DefiGratuitRetourAuCalme.png" />
+    <meta property="og:image"         content="{{ env('APP_URL') }}/src/img/TZ_FacebookImage240x240_DefiGratuitRetourAuCalme.jpg" />
     <meta name="description"          content="{{ strip_tags(trans('index.carousel-block_text-1')) }}" />
 
     <title>@if (isset($title) && $title) {{ $title }} @endif</title>
@@ -26,7 +26,7 @@
 <body @if (isset($blue_style) && $blue_style )class="blue-style" @endif itemscope itemtype="http://schema.org/WebSite">
 
 <div class="hidden" itemprop="name">{{ strip_tags(trans('info.title')) }}</div>
-<img class="hidden" itemprop="image" src="{{ env('APP_URL') }}/src/img/TZ_FacebookImage500x500_DefiGratuitRetourAuCalme.png" />
+<img class="hidden" itemprop="image" src="{{ env('APP_URL') }}/src/img/TZ_FacebookImage240x240_DefiGratuitRetourAuCalme.jpg" />
 <div class="hidden" itemprop="description">{{ strip_tags(trans('index.carousel-block_text-1')) }}</div>
 <div class="hidden" itemprop="url">{{ env('APP_URL') }}</div>
 
