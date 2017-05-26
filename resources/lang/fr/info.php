@@ -1,6 +1,6 @@
 <?php
 return [
-    'title' => 'Accueil',
+    'title' => 'La chaîne méditation',
     'title-1' => 'Information',
     'text-1' => '<p>Stéphane Shaw est l’animateur de Turbulence Zéro.<br />
 Ses trente années d’émissions de radio quotidiennes en font la voix de notre site.<br />

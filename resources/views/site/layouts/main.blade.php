@@ -9,7 +9,7 @@
         <meta property="og:title"     content="{{ strip_tags(trans('info.title')) }}" />
     @endif
     <meta property="og:description"   content="{{ strip_tags(trans('index.carousel-block_text-1')) }}" />
-    <meta property="og:image"         content="{{ env('APP_URL') }}/src/img/logo-blue.png" />
+    <meta property="og:image"         content="{{ env('APP_URL') }}/src/img/TZ_FacebookImage160X160_DefiGratuitRetourAuCalme" />
     <meta name="description"          content="{{ strip_tags(trans('index.carousel-block_text-1')) }}" />
 
     <title>@if (isset($title) && $title) {{ $title }} @endif</title>
