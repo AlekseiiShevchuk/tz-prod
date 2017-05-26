@@ -9,7 +9,7 @@
         <meta property="og:title"     content="{{ strip_tags(trans('info.title')) }}" />
     @endif
     <meta property="og:description"   content="{{ strip_tags(trans('index.carousel-block_text-1')) }}" />
-    <meta property="og:image"         content="{{ env('APP_URL') }}/src/img/TZ_FacebookImage160X160_DefiGratuitRetourAuCalme.png" />
+    <meta property="og:image"         content="{{ env('APP_URL') }}/src/img/TZ_FacebookImage500x500_DefiGratuitRetourAuCalme.png" />
     <meta name="description"          content="{{ strip_tags(trans('index.carousel-block_text-1')) }}" />
 
     <title>@if (isset($title) && $title) {{ $title }} @endif</title>
@@ -26,7 +26,7 @@
 <body @if (isset($blue_style) && $blue_style )class="blue-style" @endif itemscope itemtype="http://schema.org/WebSite">
 
 <div class="hidden" itemprop="name">{{ strip_tags(trans('info.title')) }}</div>
-<img class="hidden" itemprop="image" src="{{ env('APP_URL') }}/src/img/TZ_FacebookImage160X160_DefiGratuitRetourAuCalme.png" />
+<img class="hidden" itemprop="image" src="{{ env('APP_URL') }}/src/img/TZ_FacebookImage500x500_DefiGratuitRetourAuCalme.png" />
 <div class="hidden" itemprop="description">{{ strip_tags(trans('index.carousel-block_text-1')) }}</div>
 <div class="hidden" itemprop="url">{{ env('APP_URL') }}</div>
 
@@ -61,7 +61,7 @@
             </li>
             <li>
                 <div class="footer_soc-net">
-                    <a href="https://plus.google.com/share?url={{env('APP_URL')}}&hl={{App::getLocale()}}&text={{ trans('index.carousel-block_text-1') }}">
+                    <a href="https://plus.google.com/share?url={{env('APP_URL')}}&hl={{App::getLocale()}}&text={{ strip_tags(trans('index.carousel-block_text-1')) }}">
                         <img src="/src/img/gog.png" alt="Share on Google+"/>
                     </a>
                     <a href="http://www.facebook.com/sharer/sharer.php?u={{env('APP_URL')}}">
