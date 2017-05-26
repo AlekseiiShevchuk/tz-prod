@@ -61,7 +61,7 @@
             </li>
             <li>
                 <div class="footer_soc-net">
-                    <a href="https://plus.google.com/share?url={{env('APP_URL')}}?hl={{App::getLocale()}}">
+                    <a href="https://plus.google.com/share?url={{env('APP_URL')}}&hl={{App::getLocale()}}&text={{ strip_tags(trans('index.carousel-block_text-1')) }}">
                         <img src="/src/img/gog.png" alt="Share on Google+"/>
                     </a>
                     <a href="http://www.facebook.com/sharer/sharer.php?u={{env('APP_URL')}}">
