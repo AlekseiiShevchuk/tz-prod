@@ -13,11 +13,11 @@
                 @foreach($payments as $payment)
                     <p class="title">{!!  trans('subscription.abonne') !!}</p>
                     <p>{!!  trans('subscription.type', [ 'months' => $payment->plan()->countMonth ]) !!}</p>
-                    <p>{!!  trans('subscription.start-date', ['date' => $payment->start_access_date->format('M d, Y')]) !!}</p>
+                    <p>{!!  trans('subscription.start-date', ['date' => $payment->start_access_date->formatLocalized('M d, Y')]) !!}</p>
                     @if ($payment == $payments[count($payments) - 1] && $payment->is_renewable && Auth::user()->is_subscription_renewable )
-                        <p class="last">{!!  trans('subscription.next-payment', ['date' => $payment->end_access_date->format('M d, Y')]) !!}</p>
+                        <p class="last">{!!  trans('subscription.next-payment', ['date' => $payment->end_access_date->formatLocalized('M d, Y')]) !!}</p>
                     @else
-                        <p class="last">{!!  trans('subscription.end-date', ['date' => $payment->end_access_date->format('M d, Y')]) !!}</p>
+                        <p class="last">{!!  trans('subscription.end-date', ['date' => $payment->end_access_date->formatLocalized('M d, Y')]) !!}</p>
                     @endif
                 @endforeach
             @endif
@@ -43,8 +43,8 @@
                     <p class="title">{!!  trans('subscription.abonne') !!}</p>
                     <p>{!!  trans('abonne.user') !!} {{ $gift->user()->name or '' }} {{ $gift->user()->surname or '' }} {{ $gift->user()->email }}</p>
                     <p>{!!  trans('subscription.type', [ 'months' => $gift->plan()->countMonth ]) !!}</p>
-                    <p>{!!  trans('subscription.start-date', ['date' => $gift->start_access_date->format('M d, Y')]) !!}</p>
-                    <p class="last">{!!  trans('subscription.end-date', ['date' => $gift->end_access_date->format('M d, Y')]) !!}</p>
+                    <p>{!!  trans('subscription.start-date', ['date' => $gift->start_access_date->formatLocalized('M d, Y')]) !!}</p>
+                    <p class="last">{!!  trans('subscription.end-date', ['date' => $gift->end_access_date->formatLocalized('M d, Y')]) !!}</p>
                 @endforeach
         </div>
         @endif

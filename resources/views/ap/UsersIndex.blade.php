@@ -61,7 +61,7 @@
 
                 @if($role == 'client')
                     <td>
-                        {{ $item->subscribe_access_to != '-0001-11-30 00:00:00' ? $item->subscribe_access_to->format('Y-m-d') : '' }}
+                        {{ $item->subscribe_access_to != '-0001-11-30 00:00:00' ? $item->subscribe_access_to->formatLocalized('Y-m-d') : '' }}
                     </td>
                 @endif
 

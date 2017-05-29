@@ -246,7 +246,7 @@
                                 @if($item->isSubscriber())
                                     <div class="form-group">
                                         <label for="name">Payed access to</label>
-                                        <input type="text" class="form-control" id="subscribe_access_to" datetimepicker="true" name="subscribe_access_to" value="{{ $item->subscribe_access_to != '-0001-11-30 00:00:00' ? $item->subscribe_access_to->format('d.m.Y') : '' }}" />
+                                        <input type="text" class="form-control" id="subscribe_access_to" datetimepicker="true" name="subscribe_access_to" value="{{ $item->subscribe_access_to != '-0001-11-30 00:00:00' ? $item->subscribe_access_to->formatLocalized('d.m.Y') : '' }}" />
                                     </div>
                                 @endif
                             @endif

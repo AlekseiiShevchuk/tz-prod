@@ -50,14 +50,14 @@
                                                                 <div class="group_name-controls">
                                                                     <a href="#" a="{{ $sound->url }}"
                                                                        class="group_name-play ms-play" audio="true"
-                                                                       audio-name="{{ $sound->title }}"></a>
-                                                                    <a href="#" class="group_name-replay"></a>
-                                                                    <a href="#" class="icon-share-by-email" onclick="openModalShare()"></a>
+                                                                       audio-name="{{ $sound->title }}" title="Démarrer/Arrêter"></a>
+                                                                    <a href="#" class="group_name-replay" title="Redémarrer"></a>
+                                                                    <a href="#" class="icon-share-by-email" onclick="openModalShare()" title="Partager"></a>
                                                                 </div>
                                                             @else
                                                                 <div class="group_name-controls blocked">
-                                                                    <a href="#" class="group_name-play ms-play {{ Auth::user()->is_email_valid ? 'only_for_subscribers' : 'verif_email_sound' }}"></a>
-                                                                    <a href="#" class="group_name-replay {{ Auth::user()->is_email_valid ? 'only_for_subscribers' : 'verif_email_sound' }}"></a>
+                                                                    <a href="#" class="group_name-play ms-play {{ Auth::user()->is_email_valid ? 'only_for_subscribers' : 'verif_email_sound' }}" title="Uniquement pour les abonnés"></a>
+                                                                    <a href="#" class="group_name-replay {{ Auth::user()->is_email_valid ? 'only_for_subscribers' : 'verif_email_sound' }}" title="Uniquement pour les abonnés"></a>
                                                                 </div>
                                                             @endif
 
