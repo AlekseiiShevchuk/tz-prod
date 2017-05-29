@@ -56,6 +56,7 @@
                        id="name"
                        placeholder="Prénom"
                        name="name"
+                       oninvalid="this.setCustomValidity('Remplissez le champ')"
                        required
                        {{--oninvalid="this.setCustomValidity('Remplissez le champ')"--}}
                        {{--oninput="setCustomValidity('')"--}}
