@@ -10,8 +10,8 @@ return [
     'login_reg' => 'Connexion - Créer un compte',    
     'forgot_password' => 'Mot de passe oublié?',
     'remember' => 'Se souvenir de moi',
-    'email' => 'Email ou Pseudo',
-    'wrong_nickname' => 'Votre email ou pseudo n\'est pas valable ou déjà utilisé',
+    'email' => 'Email',
+    'wrong_nickname' => 'Votre email n\'est pas valable ou déjà utilisé',
     'wrong_password' => 'Votre mot de passe n\'est pas valable ou déjà utilisé',
 
     'success_reg_subject' => 'Turbulence Zéro : validez votre adresse email',

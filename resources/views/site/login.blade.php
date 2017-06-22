@@ -46,24 +46,6 @@
                        oninput="setCustomValidity('')"/>
                 <label for="password">*</label>
 
-                @if ($errors->has('name'))
-                    <div class="help-block">
-                        <strong>{{ $errors->first('name') }}</strong>
-                    </div>
-                @endif
-
-                <input type="text"
-                       id="name"
-                       placeholder="Prénom"
-                       name="name"
-                       oninvalid="this.setCustomValidity('Remplissez le champ')"
-                       required
-                       {{--oninvalid="this.setCustomValidity('Remplissez le champ')"--}}
-                       {{--oninput="setCustomValidity('')"--}}
-                       value="<?php echo Cookie::get('name') ?? request()->old('name'); ?>"/>
-
-                <label for="name">*</label>
-
                 @if ($errors->has('country_id'))
                     <div class="help-block">
                         <strong>{{ $errors->first('country_id') }}</strong>

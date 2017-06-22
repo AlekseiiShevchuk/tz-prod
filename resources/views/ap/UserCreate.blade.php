@@ -87,12 +87,6 @@
 
 
                                 <div class="form-group">
-                                    <label for="name">Nickame</label>
-                                    <input maxlength="255" type="text" class="form-control" id="nickname"
-                                           name="nickname">
-                                </div>
-
-                                <div class="form-group">
                                     <label for="name">Birthday</label>
                                     <input type="text" class="form-control" datetimepicker="true" id="birthday" name="birthday">
                                 </div>

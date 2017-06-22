@@ -26,7 +26,7 @@ class CheckIfEmailConfirmed
         if (
             auth()->check() &&
             auth()->user()->role == 'client' &&
-            (auth()->user()->is_email_valid == 0 || auth()->user()->country_id == 1 || empty(auth()->user()->name))
+            (auth()->user()->is_email_valid == 0 || auth()->user()->country_id == 1)
         ) {
 
             return redirect('/membre');

@@ -16,9 +16,9 @@
             </div>
         @endif
 
-        @if(Auth::check() && (Auth::user()->country_id == 1 || empty(Auth::user()->name)))
+        @if(Auth::check() && (Auth::user()->country_id == 1))
             <div class="alert membre-block-form">
-                Vous devez également entrer votre prénom et le pays dans lequel vous résidez.
+                Vous devez également entrée pays dans lequel vous résidez.
             </div>
         @endif
 
@@ -35,13 +35,6 @@
                     <input type="text" name="name" placeholder="{!!  trans('membre.name') !!}" value="{{$item->name}}"/>
                 <p>{!!  trans('membre.surname') !!}</p>
                 <input type="text" name="surname" placeholder="{!!  trans('membre.surname') !!}" value="{{$item->surname}}"/>
-                <p>{!!  trans('membre.nickname') !!}</p>
-                <input type="text" name="nickname" placeholder="{!!  trans('membre.nickname') !!}" value="{{$item->nickname}}"/>
-                @if ( isset($errors) && $errors->has('nickname'))
-                    <div class="help-block">
-                        <strong>{{ $errors->first('nickname') }}</strong>
-                    </div>
-                @endif
                 <p>{!!  trans('app.email') !!}</p>
                 <input type="text" name="email" disabled  value="{{$item->email}}"/>
                 @if ( isset($errors) && $errors->has('password'))

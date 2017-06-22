@@ -1,6 +1,6 @@
 <p>
 <p>
-    Bonjour {{ $user->name }},
+    Bonjour {{ $user->name }}
 </p>
     <p>
         Nous avons bien reçu votre paiement de {{ $plan->getFormatEuroPrice() }}.

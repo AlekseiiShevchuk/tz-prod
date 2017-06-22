@@ -159,11 +159,9 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'nickname' => [Rule::unique('users')->ignore($id),],
             'phone'    => [Rule::unique('users')->ignore($id),]
 
         ], [
-            'nickname.unique' => trans('membre.nickname_is_exists'),
             'phone.unique'    => trans('membre.phone_is_exists'),
         ]);
 

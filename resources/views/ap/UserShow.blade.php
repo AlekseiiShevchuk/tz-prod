@@ -79,12 +79,6 @@
                             @endif
 
                             <div class="form-group">
-                                <label for="name">Nickame</label>
-                                <input maxlength="255" type="text" class="form-control" id="nickname" name="nickname"
-                                       value="{{ $item->nickname }}">
-                            </div>
-
-                            <div class="form-group">
                                 <label for="name">Birthday</label>
                                 <input type="text" class="form-control" id="birthday" name="birthday"
                                        value="{{ date('d.m.Y',strtotime($item->birthday)) }}">

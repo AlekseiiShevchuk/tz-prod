@@ -43,23 +43,13 @@ class AuthController extends Controller
          */
 
         $this->validate($request, [
-            'login' => 'required|max:255',
+            'login' => 'required|max:255|email',
             'password' => 'required|min:6',
         ]);
 
-        $field = 'nickname';
+        $request->merge(['email' => $request->input('login')]);
 
-        if (filter_var($request->input('login'), FILTER_VALIDATE_EMAIL)) {
-            $field = 'email';
-
-            $loginMethod = 'loginOrRegistrationByEmail';
-        } else {
-            $loginMethod = 'loginByNickname';
-        }
-
-        $request->merge([$field => $request->input('login')]);
-
-        return $this->$loginMethod($request);
+        return $this->loginOrRegistrationByEmail($request);
     }
 
     public function loginOrRegistrationByEmail(Request $request)
@@ -95,37 +85,13 @@ class AuthController extends Controller
                     $registerResponse = $registerController->register($request);
 
                     return $registerResponse
-                        ->withCookie(cookie('country_id', $request->get('country_id'), 10000000))
-                        ->withCookie(cookie('name', $request->get('name'), 10000000));
+                        ->withCookie(cookie('country_id', $request->get('country_id'), 10000000));
                 }
             }
         }
 
         return $loginResponse
-            ->withCookie(cookie('country_id', $request->get('country_id'), 10000000))
-            ->withCookie(cookie('name', $request->get('name'), 10000000))
-            ;
-    }
-
-    public function loginByNickname(Request $request)
-    {
-        $loginResponse = Auth::attempt($request->only('nickname', 'password'), $request->has('remember'));
-
-        if ($loginResponse) {
-            return redirect('/library')
-                ->withCookie(cookie('country_id', $request->get('country_id'), 10000000))
-                ->withCookie(cookie('name', $request->get('name'), 10000000));
-        }
-
-        if (User::whereNickname($request->get('nickname'))->count() > 0) {
-            $msg = trans('login.wrong_password');
-        } else {
-            $msg = trans('login.wrong_nickname');
-        }
-
-        return redirect('/login')->withErrors([
-            'login' => $msg,
-        ]);
+            ->withCookie(cookie('country_id', $request->get('country_id'), 10000000));
     }
 
     public function emailValidation(Request $request, $id, $code)
