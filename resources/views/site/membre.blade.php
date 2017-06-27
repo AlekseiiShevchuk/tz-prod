@@ -9,18 +9,19 @@
         </div>
     @endif
 
-        @if(Auth::check() && Auth::user()->is_email_valid == 0)
-            <div class="alert membre-block-form">
-                Avant de pouvoir utiliser le site, vous devez confirmer votre adresse email.
-                Vérifiez votre boîte de réception pour cliquer sur le lien de validation dans l’email que nous vous avons envoyé.
-            </div>
-        @endif
+    @if(Auth::check() && Auth::user()->is_email_valid == 0)
+        <div class="alert membre-block-form">
+            Avant de pouvoir utiliser le site, vous devez confirmer votre adresse email.
+            Vérifiez votre boîte de réception pour cliquer sur le lien de validation dans l’email que nous vous avons
+            envoyé.
+        </div>
+    @endif
 
-        @if(Auth::check() && (Auth::user()->country_id == 1))
-            <div class="alert membre-block-form">
-                Vous devez également entrée pays dans lequel vous résidez.
-            </div>
-        @endif
+    @if(Auth::check() && (Auth::user()->country_id == 1))
+        <div class="alert membre-block-form">
+            Vous devez également entrée pays dans lequel vous résidez.
+        </div>
+    @endif
 
     <div name="membre" class="membre">
         <div class="membre-block-form">
@@ -30,60 +31,64 @@
 
                 {{ csrf_field() }}
                 <p>{!!  trans('membre.name') !!}</p>
-                <div class="req_field">
-                </div>
-                    <input type="text" name="name" placeholder="{!!  trans('membre.name') !!}" value="{{$item->name}}"/>
+                <input type="text" name="name" placeholder="{!!  trans('membre.name') !!}" value="{{$item->name}}"/>
                 <p>{!!  trans('membre.surname') !!}</p>
-                <input type="text" name="surname" placeholder="{!!  trans('membre.surname') !!}" value="{{$item->surname}}"/>
+                <input type="text" name="surname" placeholder="{!!  trans('membre.surname') !!}"
+                       value="{{$item->surname}}"/>
                 <p>{!!  trans('app.email') !!}</p>
-                <input type="text" name="email" disabled  value="{{$item->email}}"/>
+                <input type="text" name="email" disabled value="{{$item->email}}"/>
                 @if ( isset($errors) && $errors->has('password'))
                     <div class="help-block">
                         <strong>{{ $errors->first('password') }}</strong>
                     </div>
                 @endif
                 <p>{!!  trans('membre.password') !!}</p>
-                <input name="password" maxlength="30" class="membre-profile_password margin-right" type="password" placeholder="{!!  trans('app.password') !!}"/>
-                <input name="confirm-password" maxlength="30" class="membre-profile_password" type="password" placeholder="{!!  trans('membre.rep-new-pas') !!}"/>
+                <input name="password" maxlength="30" class="membre-profile_password margin-right" type="password"
+                       placeholder="{!!  trans('app.password') !!}"/>
+                <input name="confirm-password" maxlength="30" class="membre-profile_password" type="password"
+                       placeholder="{!!  trans('membre.rep-new-pas') !!}"/>
                 <p>{!!  trans('membre.data-bth') !!}</p>
 
                 <select name="date" id="date" value="{{$item->getBirthDayDate()->day}}"></select>
 
-                <select name="month" months="{!! trans('app.months') !!}" id="month" value="{{$item->getBirthDayDate()->month}}"></select>
+                <select name="month" months="{!! trans('app.months') !!}" id="month"
+                        value="{{$item->getBirthDayDate()->month}}"></select>
 
                 <select name="year" id="year" value="{{$item->getBirthDayDate()->year}}"></select>
 
                 <div class="gender">
                     <p>{!!  trans('membre.gender') !!}</p>
-                    <input id="man" type="radio" name="gender" value="man" {{ $item->gender == 'man' ? 'checked' : '' }}>
+                    <input id="man" type="radio" name="gender"
+                           value="man" {{ $item->gender == 'man' ? 'checked' : '' }}>
                     <label for="man">{!!  trans('membre.man') !!}</label>
-                    <input id="woman" type="radio" name="gender" value="woman" {{ $item->gender == 'woman' ? 'checked' : '' }}>
+                    <input id="woman" type="radio" name="gender"
+                           value="woman" {{ $item->gender == 'woman' ? 'checked' : '' }}>
                     <label for="woman">{!!  trans('membre.women') !!}</label>
                 </div>
 
-                {{--<select class="country">--}}
-                    {{--<option  selected="selected">Country</option>--}}
-                    {{--<option >USA</option>--}}
-                    {{--<option >England</option>--}}
-                {{--</select>--}}
-
                 <p>{!!  trans('membre.country') !!}</p>
                 <div class="req_field">
-                {!! View::make('widgets.InputSelectCountries', ['country_id' => $item->country_id, 'class' => 'country']) !!}
+                    {!! View::make('widgets.InputSelectCountries', ['country_id' => $item->country_id, 'class' => 'country']) !!}
                 </div>
                 <p>{!!  trans('membre.city') !!}</p>
-                <input type="text" name="city" maxlength="255" placeholder="{!!  trans('membre.city') !!}" value="{{$item->city}}">
+                <input type="text" name="city" maxlength="255" placeholder="{!!  trans('membre.city') !!}"
+                       value="{{$item->city}}">
                 <p>{!!  trans('membre.z-code') !!}</p>
-                <input type="text" name="zip" maxlength="10" placeholder="{!!  trans('membre.z-code') !!}" value="{{$item->zip}}">
+                <input type="text" name="zip" maxlength="10" placeholder="{!!  trans('membre.z-code') !!}"
+                       value="{{$item->zip}}">
                 <p>{!!  trans('membre.address') !!}</p>
-                <input type="text" name="address1" maxlength="255" placeholder="{!!  trans('membre.address') !!}" value="{{$item->address1}}">
+                <input type="text" name="address1" maxlength="255" placeholder="{!!  trans('membre.address') !!}"
+                       value="{{$item->address1}}">
                 <p>{!!  trans('membre.address2') !!}</p>
-                <input type="text" name="address2" maxlength="255" placeholder="{!!  trans('membre.address2') !!}" value="{{$item->address2}}">
+                <input type="text" name="address2" maxlength="255" placeholder="{!!  trans('membre.address2') !!}"
+                       value="{{$item->address2}}">
                 <div class="phone-numder">
                     <p>{!!  trans('membre.phone') !!}</p>
                     <p>{!!  trans('membre.phone2') !!}</p>
-                    <input name="phone_country_code"  placeholder="{!!  trans('membre.phone') !!}"  maxlength="6" onlynumbers="true" type="text" value="{{$item->phone_country_code ?: ''}}">
-                    <input name="phone"  placeholder="{!!  trans('membre.phone2') !!}"  onlynumbers="true" maxlength="20" type="text" value="{{$item->phone}}">
+                    <input name="phone_country_code" placeholder="{!!  trans('membre.phone') !!}" maxlength="6"
+                           onlynumbers="true" type="text" value="{{$item->phone_country_code ?: ''}}">
+                    <input name="phone" placeholder="{!!  trans('membre.phone2') !!}" onlynumbers="true" maxlength="20"
+                           type="text" value="{{$item->phone}}">
                     @if ( isset($errors) && $errors->has('phone'))
                         <div class="help-block">
                             <strong>{{ $errors->first('phone') }}</strong>
@@ -103,7 +108,8 @@
 
                 <div class="subscribe_news">
                     <label class="check-box">
-                        <input type="checkbox" name="subscribe_news" value="1" {{ $item->subscribe_news === 1 ? 'checked' : '' }}> {!!  trans('membre.subscribe_news') !!}
+                        <input type="checkbox" name="subscribe_news"
+                               value="1" {{ $item->subscribe_news === 1 ? 'checked' : '' }}> {!!  trans('membre.subscribe_news') !!}
                     </label>
                 </div>
 
@@ -113,15 +119,12 @@
             </form>
 
             <script type="text/javascript">
-                function checkSize(max_img_size)
-                {
+                function checkSize(max_img_size) {
                     var input = document.getElementById("loader");
                     // check for browser support (may need to be modified)
-                    if(input.files && input.files.length == 1)
-                    {
-                        if (input.files[0].size > max_img_size)
-                        {
-                            alert("The file must be less than " + (max_img_size/1024/1024) + "MB");
+                    if (input.files && input.files.length == 1) {
+                        if (input.files[0].size > max_img_size) {
+                            alert("The file must be less than " + (max_img_size / 1024 / 1024) + "MB");
                             return false;
                         }
                     }
