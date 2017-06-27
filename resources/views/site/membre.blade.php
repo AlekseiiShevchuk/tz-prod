@@ -67,9 +67,7 @@
                 </div>
 
                 <p>{!!  trans('membre.country') !!}</p>
-                <div class="req_field">
                     {!! View::make('widgets.InputSelectCountries', ['country_id' => $item->country_id, 'class' => 'country']) !!}
-                </div>
                 <p>{!!  trans('membre.city') !!}</p>
                 <input type="text" name="city" maxlength="255" placeholder="{!!  trans('membre.city') !!}"
                        value="{{$item->city}}">
