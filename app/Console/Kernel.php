@@ -32,7 +32,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->call(function(Cardinity $cardinity){
 
-            /** @var \PDO $pdo*/
+            /*
             $pdo = DB::getPdo();
             $res = $pdo->query('SELECT * FROM payments  GROUP BY user_id DESC HAVING end_access_date <= CURDATE() ORDER BY end_access_date');
 
@@ -46,6 +46,7 @@ class Kernel extends ConsoleKernel
                     SubscriptionController::successPayment($paymentDb->plan(), $payment, $user);
                 }
             }
+            */
 
             $users = User::where('is_email_valid', false)
                 ->where('role', 'client')
