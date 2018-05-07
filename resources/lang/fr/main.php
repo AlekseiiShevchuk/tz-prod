@@ -9,7 +9,7 @@ return [
         'contacts' => 'Contacts',
         'forum' => 'Forum & Aide'
     ],
-    'copyright' => '&copy 2017 TurburlenceZero - ABS Ltd. All rights reserved.',
+    'copyright' => '&copy 2017 TurburlenceZero. All rights reserved.',
     'footer' => [
         'bio' => 'Stéphane: bio',
         'tanks' => 'Remerciements',
